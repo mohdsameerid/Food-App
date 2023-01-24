@@ -1,24 +1,7 @@
-/**
- *  Header
- *    - Logo 
- *    - nav items ( Right side )
- *    - cart
- *  Body 
- *    - Search bar 
- *    - Resturant_card
- *       - Img
- *       - Name
- *       - Rating
- *       - Cusines
- *  Footer
- *     - link
- *     - CopyRight
- * 
- */
- import React from "react";
- import ReactDOM from "react-dom/client";
 
- const resturantList = [
+export const IMG_CDN_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
+
+export const resturantList = [
     {
       type: "restaurant",
       data: {
@@ -630,72 +613,3 @@
       subtype: "basic",
     },
   ];
-
- const Title = () => {
-    return (
-        <img className="logo" 
-         src= "https://seeklogo.com/images/F/foodie-goodie-logo-7E97467E9A-seeklogo.com.gif"
-         alt="Logo_image "/>
-    );
- }
-
-const Header = () => {
-    return (
-        <div className="header">
-        <Title />
-        <div className="nav-items">
-            <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Services</li>
-                <li>cart</li>
-            </ul>
-        </div>
-        </div>
-    );
-}
-
-const ResturantCard = ( {name, lastMileTravelString, cloudinaryImageId, cuisines} ) => {
-    // {console.log(name)}
-    return (
-        
-        <div className="card">
-            <img 
-            src={`https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/${cloudinaryImageId} `} 
-            alt="Img" />
-            <h2> {name}</h2> 
-            <h3> {cuisines.join(", ")} </h3>
-            <h4> {lastMileTravelString} </h4>
-        </div>
-    );
-}
-
-const Body = () => {
-    return (
-        <div className="restrauntant-list">
-        {
-         resturantList.map( (rest) => {
-            return <ResturantCard {...rest.data} key={rest.data.id} />;
-        })}
-
-        </div>
-    );
-}
-const Footer = () => {
-    return (
-        <h1> Footer </h1>
-    );
-}
-const App = () => {
-    return (
-        <>
-           <Header />
-           <Body />
-           <Footer />
-        </>
-    );
-}
-
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
