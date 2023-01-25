@@ -1,7 +1,7 @@
 {
   "name": "food-app",
   "version": "1.0.0",
-  "description": "This is Food App",
+  "description": "This is react app",
   "main": "index.js",
   "scripts": {
     "test": "jest"

@@ -8,9 +8,9 @@ export const ResturantCard = ( {name, lastMileTravelString, cloudinaryImageId, c
         
         <div className="card">
             <img src={url } alt="Img" />
-            <h2> {name}</h2> 
-            <h3> {cuisines.join(", ")} </h3>
-            <h4> {lastMileTravelString} </h4>
+            <h3> {name}</h3> 
+            <h4> {cuisines.join(", ")} </h4>
+            <h5> {lastMileTravelString} </h5>
         </div>
     );
 }

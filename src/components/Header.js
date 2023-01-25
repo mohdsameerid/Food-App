@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Title = () => {
     return (
@@ -9,6 +9,7 @@ const Title = () => {
  }
 
 const Header = () => {
+    const[login, setLogin] = useState(false);
     return (
         <div className="header">
         <Title />
@@ -20,6 +21,9 @@ const Header = () => {
                 <li>cart</li>
             </ul>
         </div>
+        { (login) ? <button onClick={()=> setLogin(false) }>Logout</button> 
+            : <button onClick={()=> setLogin(true) } >Login</button> 
+        }
         </div>
     );
 }
