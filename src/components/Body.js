@@ -1,7 +1,8 @@
 import { resturantList } from "../Config";
 import { ResturantCard } from "./ResturantCard";
 import React, { useEffect, useState } from "react";
-import LoadingData from "./LaodingData";
+import ShimmerUI from "./ShimmerUI";
+import { Link } from "react-router-dom";
 
 
 function filterdata(searchText, restaurant){
@@ -10,7 +11,6 @@ function filterdata(searchText, restaurant){
           );
     return data;
 }
-
 
 
 const Body = () => {
@@ -26,7 +26,7 @@ const Body = () => {
     async function getRestraunt(){
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.4403848&lng=80.3160714&page_type=DESKTOP_WEB_LISTING");
         const json = await data.json();
-        console.log(json);
+        // console.log(json);
 
         setAllResturants(json?.data?.cards[2]?.data?.data?.cards);
         setFilteredResturants(json?.data?.cards[2]?.data?.data?.cards);
@@ -34,7 +34,7 @@ const Body = () => {
     
     // if Resturant.length == 0 => Shimmer UI
     // else Show restaurant data  
-    return  (allResturants.length == 0) ?  <LoadingData /> :  (
+    return  (allResturants.length == 0) ?  <ShimmerUI /> :  (
         <>
           <div className="Seach-container" >
             <input type="text" placeholder="Search" value={searchText} 
@@ -54,7 +54,9 @@ const Body = () => {
           <div className="restrauntant-list">     
           { (filteredResturants.length > 0 ) ?
             filteredResturants.map( (rest) => {
-               return <ResturantCard {...rest.data} key={rest.data.id} />;
+               return <Link to={"/restaurant/"+rest.data.id} key={rest.data.id} >
+                    <ResturantCard {...rest.data}  />
+                </Link>
             }) : <h1>NO data Found!!!</h1>
           }
           </div>
