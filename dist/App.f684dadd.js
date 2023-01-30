@@ -35922,7 +35922,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 var Title = function Title() {
   return /*#__PURE__*/_react.default.createElement("img", {
     className: "logo",
-    src: "https://seeklogo.com/images/F/foodie-goodie-logo-7E97467E9A-seeklogo.com.gif",
+    src: "https://tasteofnovascotia.com/wp-content/uploads/2015/02/The-Canteen-logo.png",
     alt: "Logo_image "
   });
 };
@@ -38140,7 +38140,9 @@ var Body = function Body() {
         while (1) switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.4403848&lng=80.3160714&page_type=DESKTOP_WEB_LISTING");
+            return fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.4403848&lng=80.3160714&page_type=DESKTOP_WEB_LISTING", {
+              credentials: 'same-origin'
+            });
           case 2:
             data = _context.sent;
             _context.next = 5;
@@ -38406,7 +38408,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53897" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49741" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

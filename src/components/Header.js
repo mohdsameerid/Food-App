@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Title = () => {
     return (
         <img className="logo" 
-         src= "https://seeklogo.com/images/F/foodie-goodie-logo-7E97467E9A-seeklogo.com.gif"
+         src= "https://tasteofnovascotia.com/wp-content/uploads/2015/02/The-Canteen-logo.png"
          alt="Logo_image "/>
     );
  }
