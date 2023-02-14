@@ -11,22 +11,33 @@ class Profile extends React.Component{
                 bio: "dummy",
             }
         }
-        console.log(" Constructor "+ this.props.name);
+        console.log( this.props.name+ " Constructor ");
     }
     async componentDidMount(){
+        
         // best place to call API.
-        const data = await fetch("https://api.github.com/users/mohdsameerid");
-        const json  = await data.json();
-        // const {name, bio } = json;
-        console.log(json);
-        this.setState({
-            userInfo: json,
-        });
-        console.log(" componentDidMount "+ this.props.name);
+        // const data = await fetch("https://api.github.com/users/mohdsameerid");
+        // const json  = await data.json();
+        // // const {name, bio } = json;
+        // // console.log(json);
+        // this.setState({
+        //     userInfo: json,
+        // });
+        this.timers = setInterval(() => {
+            console.log("HEllo");
+        },1000);
+        console.log( this.props.name +" componentDidMount ");
+    }
+    componentDidUpdate(){
+        console.log("component did update");
+    }
+    componentWillUnmount(){
+        clearInterval(this.timers);
+        console.log("returned");
     }
     render(){
         // const { name, bio } = json;
-        console.log(" Render "+ this.props.name);
+        console.log( this.props.name +" Render ");
         // console.log(json.bio);
         return(
             <>

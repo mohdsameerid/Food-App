@@ -38244,32 +38244,29 @@ var Profile = /*#__PURE__*/function (_React$Component) {
         bio: "dummy"
       }
     };
-    console.log(" Constructor " + _this.props.name);
+    console.log(_this.props.name + " Constructor ");
     return _this;
   }
   _createClass(Profile, [{
     key: "componentDidMount",
     value: function () {
       var _componentDidMount = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-        var data, json;
         return _regeneratorRuntime().wrap(function _callee$(_context) {
           while (1) switch (_context.prev = _context.next) {
             case 0:
-              _context.next = 2;
-              return fetch("https://api.github.com/users/mohdsameerid");
+              // best place to call API.
+              // const data = await fetch("https://api.github.com/users/mohdsameerid");
+              // const json  = await data.json();
+              // // const {name, bio } = json;
+              // // console.log(json);
+              // this.setState({
+              //     userInfo: json,
+              // });
+              this.timers = setInterval(function () {
+                console.log("HEllo");
+              }, 1000);
+              console.log(this.props.name + " componentDidMount ");
             case 2:
-              data = _context.sent;
-              _context.next = 5;
-              return data.json();
-            case 5:
-              json = _context.sent;
-              // const {name, bio } = json;
-              console.log(json);
-              this.setState({
-                userInfo: json
-              });
-              console.log(" componentDidMount " + this.props.name);
-            case 9:
             case "end":
               return _context.stop();
           }
@@ -38281,10 +38278,21 @@ var Profile = /*#__PURE__*/function (_React$Component) {
       return componentDidMount;
     }()
   }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {
+      console.log("component did update");
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      clearInterval(this.timers);
+      console.log("returned");
+    }
+  }, {
     key: "render",
     value: function render() {
       // const { name, bio } = json;
-      console.log(" Render " + this.props.name);
+      console.log(this.props.name + " Render ");
       // console.log(json.bio);
       return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h1", null, " this is the profile components: Details ...."), /*#__PURE__*/_react.default.createElement("p", null, " Name: ", this.state.userInfo.name), /*#__PURE__*/_react.default.createElement("p", null, "BIO: ", this.state.userInfo.bio), /*#__PURE__*/_react.default.createElement("img", {
         src: this.state.userInfo.avatar_url
@@ -38295,7 +38303,31 @@ var Profile = /*#__PURE__*/function (_React$Component) {
 }(_react.default.Component);
 var _default = Profile;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/dist/index.js"}],"src/components/About.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/dist/index.js"}],"src/components/ProfileClass.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _react = _interopRequireWildcard(require("react"));
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+var ProfileClas = function ProfileClas() {
+  (0, _react.useEffect)(function () {
+    var time = setInterval(function () {
+      console.log("Hello");
+    }, 1000);
+    return function () {
+      clearInterval(time);
+      console.log("Returned.");
+    };
+  }, []);
+  return /*#__PURE__*/_react.default.createElement("h1", null, "Class based Component.");
+};
+var _default = ProfileClas;
+exports.default = _default;
+},{"react":"node_modules/react/index.js"}],"src/components/About.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38304,6 +38336,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _Profile = _interopRequireDefault(require("./Profile"));
+var _ProfileClass = _interopRequireDefault(require("./ProfileClass"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -38322,23 +38355,20 @@ var About = /*#__PURE__*/function (_React$Component) {
   _inherits(About, _React$Component);
   var _super = _createSuper(About);
   function About(props) {
-    var _this;
     _classCallCheck(this, About);
-    _this = _super.call(this, props);
-    console.log("Parent constructor");
-    return _this;
+    return _super.call(this, props); // console.log("Parent constructor");
   }
   _createClass(About, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      console.log("Parent - componentDidMount");
+      // console.log("Parent - componentDidMount");
     }
   }, {
     key: "render",
     value: function render() {
-      console.log("Parent - render");
-      return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h1", null, "This is about us page!!"), /*#__PURE__*/_react.default.createElement(_Profile.default, {
-        name: "First child"
+      // console.log("Parent - render");
+      return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h1", null, "This is about us page!!"), /*#__PURE__*/_react.default.createElement(_ProfileClass.default, {
+        name: "first child"
       }));
     }
   }]);
@@ -38346,7 +38376,7 @@ var About = /*#__PURE__*/function (_React$Component) {
 }(_react.default.Component);
 var _default = About;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./Profile":"src/components/Profile.js"}],"src/components/Contact.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./Profile":"src/components/Profile.js","./ProfileClass":"src/components/ProfileClass.js"}],"src/components/Contact.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
