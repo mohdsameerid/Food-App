@@ -35941,7 +35941,9 @@ var Header = function Header() {
     to: "/about"
   }, " About ")), /*#__PURE__*/_react.default.createElement("li", null, " ", /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/contact"
-  }, " Contact ")), /*#__PURE__*/_react.default.createElement("li", null, "cart"))), login ? /*#__PURE__*/_react.default.createElement("button", {
+  }, " Contact ")), /*#__PURE__*/_react.default.createElement("li", null, "cart"), /*#__PURE__*/_react.default.createElement("li", null, " ", /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/instamart"
+  }, " Instamart ")))), login ? /*#__PURE__*/_react.default.createElement("button", {
     onClick: function onClick() {
       return setLogin(false);
     }
@@ -35959,622 +35961,11 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.resturantList = exports.IMG_CDN_URL = void 0;
+exports.resturantList = exports.Restaurant_Menu_List = exports.IMG_CDN_URL = void 0;
 var IMG_CDN_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
-
-// export const resturantList = [
-//     {
-//       type: "restaurant",
-//       data: {
-//         type: "F",
-//         id: "549334",
-//         name: "Punjabi Angithi",
-//         uuid: "3f580e02-b84d-43f8-a2e7-d29c395ccf68",
-//         city: "10459",
-//         area: "Sector 72",
-//         totalRatingsString: "1000+ ratings",
-//         cloudinaryImageId: "blj0wgwbliwovpk85vcm",
-//         cuisines: ["North Indian", "Punjabi", "Chinese", "Thalis"],
-//         tags: [],
-//         costForTwo: 40000,
-//         costForTwoString: "₹400 FOR TWO",
-//         deliveryTime: 30,
-//         minDeliveryTime: 30,
-//         maxDeliveryTime: 30,
-//         slaString: "30 MINS",
-//         lastMileTravel: 2.9000000953674316,
-//         slugs: {
-//           restaurant: "punjabi-angithi-sector-18-sector-18-2",
-//           city: "noida-1",
-//         },
-//         cityState: "10459",
-//         address:
-//           "Shop 5, Village- Sarfabad, Sector 72, Noida, ear royal avenue, next to Just Desi",
-//         locality: "near royal avenue lane",
-//         parentId: 4464,
-//         unserviceable: false,
-//         veg: true,
-//         select: false,
-//         favorite: false,
-//         tradeCampaignHeaders: [],
-//         aggregatedDiscountInfo: {
-//           header: "50% off",
-//           shortDescriptionList: [
-//             {
-//               meta: "50% off | Use WELCOME50",
-//               discountType: "Percentage",
-//               operationType: "RESTAURANT",
-//             },
-//           ],
-//           descriptionList: [
-//             {
-//               meta: "50% off up to ₹100 | Use code WELCOME50",
-//               discountType: "Percentage",
-//               operationType: "RESTAURANT",
-//             },
-//           ],
-//           subHeader: "",
-//           headerType: 0,
-//           superFreedel: "",
-//         },
-//         aggregatedDiscountInfoV2: {
-//           header: "50% OFF",
-//           shortDescriptionList: [
-//             {
-//               meta: "Use WELCOME50",
-//               discountType: "Percentage",
-//               operationType: "RESTAURANT",
-//             },
-//           ],
-//           descriptionList: [
-//             {
-//               meta: "50% off up to ₹100 | Use code WELCOME50",
-//               discountType: "Percentage",
-//               operationType: "RESTAURANT",
-//             },
-//           ],
-//           subHeader: "",
-//           headerType: 0,
-//           superFreedel: "",
-//         },
-//         ribbon: [
-//           {
-//             type: "PROMOTED",
-//           },
-//         ],
-//         chain: [],
-//         feeDetails: {
-//           fees: [],
-//           totalFees: 0,
-//           message: "",
-//           title: "",
-//           amount: "",
-//           icon: "",
-//         },
-//         availability: {
-//           opened: true,
-//           nextOpenMessage: "",
-//           nextCloseMessage: "",
-//         },
-//         longDistanceEnabled: 0,
-//         rainMode: "NONE",
-//         thirdPartyAddress: false,
-//         thirdPartyVendor: "",
-//         adTrackingID: "cid=5687245~p=1~eid=00000185-8b5c-3f94-0f4e-b16b0031011b",
-//         badges: {
-//           imageBased: [],
-//           textBased: [],
-//           textExtendedBadges: [],
-//         },
-//         lastMileTravelString: "2.9 kms",
-//         hasSurge: false,
-//         sla: {
-//           restaurantId: "549334",
-//           deliveryTime: 30,
-//           minDeliveryTime: 30,
-//           maxDeliveryTime: 30,
-//           lastMileTravel: 2.9000000953674316,
-//           lastMileDistance: 0,
-//           serviceability: "SERVICEABLE",
-//           rainMode: "NONE",
-//           longDistance: "NOT_LONG_DISTANCE",
-//           preferentialService: false,
-//           iconType: "EMPTY",
-//         },
-//         promoted: true,
-//         avgRating: "4.0",
-//         totalRatings: 1000,
-//         new: false,
-//       },
-//       subtype: "basic",
-//     },
-//     {
-//       type: "restaurant",
-//       data: {
-//         type: "F",
-//         id: "555911",
-//         name: "Gopala",
-//         uuid: "9775597c-229a-4a52-9316-1154666864d2",
-//         city: "10459",
-//         area: "Sector 50",
-//         totalRatingsString: "50+ ratings",
-//         cloudinaryImageId: "gjdklaytow9yc3db4myv",
-//         cuisines: ["Sweets", "Desserts", "Bakery", "Snacks"],
-//         tags: [],
-//         costForTwo: 20000,
-//         costForTwoString: "₹200 FOR TWO",
-//         deliveryTime: 20,
-//         minDeliveryTime: 20,
-//         maxDeliveryTime: 20,
-//         slaString: "20 MINS",
-//         lastMileTravel: 1.7999999523162842,
-//         slugs: {
-//           restaurant: "gopala-sector-50-sector-50-3",
-//           city: "noida-1",
-//         },
-//         cityState: "10459",
-//         address:
-//           "B - 1/7 central market sector 50 noida, NOIDA CITY ZONE-4, Gautam Buddha Nagar , Uttar Pradesh-201301",
-//         locality: "Central Market",
-//         parentId: 281052,
-//         unserviceable: false,
-//         veg: true,
-//         select: false,
-//         favorite: false,
-//         tradeCampaignHeaders: [],
-//         aggregatedDiscountInfo: {
-//           header: "50% off",
-//           shortDescriptionList: [
-//             {
-//               meta: "50% off | Use WELCOME50",
-//               discountType: "Percentage",
-//               operationType: "RESTAURANT",
-//             },
-//           ],
-//           descriptionList: [
-//             {
-//               meta: "50% off up to ₹100 | Use code WELCOME50",
-//               discountType: "Percentage",
-//               operationType: "RESTAURANT",
-//             },
-//           ],
-//           subHeader: "",
-//           headerType: 0,
-//           superFreedel: "",
-//         },
-//         aggregatedDiscountInfoV2: {
-//           header: "50% OFF",
-//           shortDescriptionList: [
-//             {
-//               meta: "Use WELCOME50",
-//               discountType: "Percentage",
-//               operationType: "RESTAURANT",
-//             },
-//           ],
-//           descriptionList: [
-//             {
-//               meta: "50% off up to ₹100 | Use code WELCOME50",
-//               discountType: "Percentage",
-//               operationType: "RESTAURANT",
-//             },
-//           ],
-//           subHeader: "",
-//           headerType: 0,
-//           superFreedel: "",
-//         },
-//         chain: [],
-//         feeDetails: {
-//           fees: [],
-//           totalFees: 0,
-//           message: "",
-//           title: "",
-//           amount: "",
-//           icon: "",
-//         },
-//         availability: {
-//           opened: true,
-//           nextOpenMessage: "",
-//           nextCloseMessage: "",
-//         },
-//         longDistanceEnabled: 0,
-//         rainMode: "NONE",
-//         thirdPartyAddress: false,
-//         thirdPartyVendor: "",
-//         adTrackingID: "",
-//         badges: {
-//           imageBased: [],
-//           textBased: [],
-//           textExtendedBadges: [],
-//         },
-//         lastMileTravelString: "1.7 kms",
-//         hasSurge: false,
-//         sla: {
-//           restaurantId: "555911",
-//           deliveryTime: 20,
-//           minDeliveryTime: 20,
-//           maxDeliveryTime: 20,
-//           lastMileTravel: 1.7999999523162842,
-//           lastMileDistance: 0,
-//           serviceability: "SERVICEABLE",
-//           rainMode: "NONE",
-//           longDistance: "NOT_LONG_DISTANCE",
-//           preferentialService: false,
-//           iconType: "EMPTY",
-//         },
-//         promoted: false,
-//         avgRating: "4.6",
-//         totalRatings: 50,
-//         new: false,
-//       },
-//       subtype: "basic",
-//     },
-//     {
-//       type: "restaurant",
-//       data: {
-//         type: "F",
-//         id: "244228",
-//         name: "Annapurna Kitchen",
-//         uuid: "12c9015a-1d40-458c-9824-cd3e795c7a97",
-//         city: "10459",
-//         area: "Sector 62",
-//         totalRatingsString: "20+ ratings",
-//         cloudinaryImageId: "o4qyfbp3npswfswxopen",
-//         cuisines: ["North Indian", "Thalis", "Combo"],
-//         tags: [],
-//         costForTwo: 10000,
-//         costForTwoString: "₹100 FOR TWO",
-//         deliveryTime: 21,
-//         minDeliveryTime: 21,
-//         maxDeliveryTime: 21,
-//         slaString: "21 MINS",
-//         lastMileTravel: 0.5,
-//         slugs: {
-//           restaurant: "annapurna-kitchen-sector-64-sector-64",
-//           city: "noida-1",
-//         },
-//         cityState: "10459",
-//         address:
-//           "Chauhan Hotel, Captain Shashi Kant Marg, Hoshiyarpur, JJ Colony, Sector 52, Noida, Uttar Pradesh 201301",
-//         locality: "Sector 64",
-//         parentId: 13881,
-//         unserviceable: false,
-//         veg: false,
-//         select: false,
-//         favorite: false,
-//         tradeCampaignHeaders: [],
-//         aggregatedDiscountInfo: {
-//           header: "50% off",
-//           shortDescriptionList: [
-//             {
-//               meta: "50% off | Use WELCOME50",
-//               discountType: "Percentage",
-//               operationType: "RESTAURANT",
-//             },
-//           ],
-//           descriptionList: [
-//             {
-//               meta: "50% off up to ₹100 | Use code WELCOME50",
-//               discountType: "Percentage",
-//               operationType: "RESTAURANT",
-//             },
-//           ],
-//           subHeader: "",
-//           headerType: 0,
-//           superFreedel: "",
-//         },
-//         aggregatedDiscountInfoV2: {
-//           header: "50% OFF",
-//           shortDescriptionList: [
-//             {
-//               meta: "Use WELCOME50",
-//               discountType: "Percentage",
-//               operationType: "RESTAURANT",
-//             },
-//           ],
-//           descriptionList: [
-//             {
-//               meta: "50% off up to ₹100 | Use code WELCOME50",
-//               discountType: "Percentage",
-//               operationType: "RESTAURANT",
-//             },
-//           ],
-//           subHeader: "",
-//           headerType: 0,
-//           superFreedel: "",
-//         },
-//         chain: [],
-//         feeDetails: {
-//           fees: [],
-//           totalFees: 0,
-//           message: "",
-//           title: "",
-//           amount: "",
-//           icon: "",
-//         },
-//         availability: {
-//           opened: true,
-//           nextOpenMessage: "",
-//           nextCloseMessage: "",
-//         },
-//         longDistanceEnabled: 0,
-//         rainMode: "NONE",
-//         thirdPartyAddress: false,
-//         thirdPartyVendor: "",
-//         adTrackingID: "",
-//         badges: {
-//           imageBased: [],
-//           textBased: [],
-//           textExtendedBadges: [],
-//         },
-//         lastMileTravelString: "0.5 kms",
-//         hasSurge: false,
-//         sla: {
-//           restaurantId: "244228",
-//           deliveryTime: 21,
-//           minDeliveryTime: 21,
-//           maxDeliveryTime: 21,
-//           lastMileTravel: 0.5,
-//           lastMileDistance: 0,
-//           serviceability: "SERVICEABLE",
-//           rainMode: "NONE",
-//           longDistance: "NOT_LONG_DISTANCE",
-//           preferentialService: false,
-//           iconType: "EMPTY",
-//         },
-//         promoted: false,
-//         avgRating: "4.0",
-//         totalRatings: 20,
-//         new: false,
-//       },
-//       subtype: "basic",
-//     },
-//     {
-//       type: "restaurant",
-//       data: {
-//         type: "F",
-//         id: "591764",
-//         name: "Imperfecto",
-//         uuid: "8d8e8927-d813-4ed6-94bb-38b6aa2c2109",
-//         city: "10459",
-//         area: "Near Noida City Center Metro",
-//         totalRatingsString: "100+ ratings",
-//         cloudinaryImageId: "pmby7ghk7ituecpxgwyv",
-//         cuisines: ["North Indian", "Biryani", "Chinese"],
-//         tags: [],
-//         costForTwo: 40000,
-//         costForTwoString: "₹400 FOR TWO",
-//         deliveryTime: 34,
-//         minDeliveryTime: 34,
-//         maxDeliveryTime: 34,
-//         slaString: "34 MINS",
-//         lastMileTravel: 1.399999976158142,
-//         slugs: {
-//           restaurant: "ruin-pub-golf-course-golf-course",
-//           city: "noida-1",
-//         },
-//         cityState: "10459",
-//         address:
-//           "Logix City Center Noida. Plot No. BW-58, Sector 32, Near Noida City Center Metro, Noida,Uttar Pradesh 201301.",
-//         locality: "Sector 32",
-//         parentId: 239216,
-//         unserviceable: false,
-//         veg: false,
-//         select: false,
-//         favorite: false,
-//         tradeCampaignHeaders: [],
-//         aggregatedDiscountInfo: {
-//           header: "50% off",
-//           shortDescriptionList: [
-//             {
-//               meta: "50% off | Use WELCOME50",
-//               discountType: "Percentage",
-//               operationType: "RESTAURANT",
-//             },
-//           ],
-//           descriptionList: [
-//             {
-//               meta: "50% off up to ₹100 | Use code WELCOME50",
-//               discountType: "Percentage",
-//               operationType: "RESTAURANT",
-//             },
-//           ],
-//           subHeader: "",
-//           headerType: 0,
-//           superFreedel: "",
-//         },
-//         aggregatedDiscountInfoV2: {
-//           header: "50% OFF",
-//           shortDescriptionList: [
-//             {
-//               meta: "Use WELCOME50",
-//               discountType: "Percentage",
-//               operationType: "RESTAURANT",
-//             },
-//           ],
-//           descriptionList: [
-//             {
-//               meta: "50% off up to ₹100 | Use code WELCOME50",
-//               discountType: "Percentage",
-//               operationType: "RESTAURANT",
-//             },
-//           ],
-//           subHeader: "",
-//           headerType: 0,
-//           superFreedel: "",
-//         },
-//         ribbon: [
-//           {
-//             type: "PROMOTED",
-//           },
-//         ],
-//         chain: [],
-//         feeDetails: {
-//           fees: [],
-//           totalFees: 0,
-//           message: "",
-//           title: "",
-//           amount: "",
-//           icon: "",
-//         },
-//         availability: {
-//           opened: true,
-//           nextOpenMessage: "",
-//           nextCloseMessage: "",
-//         },
-//         longDistanceEnabled: 0,
-//         rainMode: "NONE",
-//         thirdPartyAddress: false,
-//         thirdPartyVendor: "",
-//         adTrackingID: "cid=5618094~p=4~eid=00000185-8b5c-3f94-0f4e-b16c0031042e",
-//         badges: {
-//           imageBased: [],
-//           textBased: [],
-//           textExtendedBadges: [],
-//         },
-//         lastMileTravelString: "1.3 kms",
-//         hasSurge: false,
-//         sla: {
-//           restaurantId: "591764",
-//           deliveryTime: 34,
-//           minDeliveryTime: 34,
-//           maxDeliveryTime: 34,
-//           lastMileTravel: 1.399999976158142,
-//           lastMileDistance: 0,
-//           serviceability: "SERVICEABLE",
-//           rainMode: "NONE",
-//           longDistance: "NOT_LONG_DISTANCE",
-//           preferentialService: false,
-//           iconType: "EMPTY",
-//         },
-//         promoted: true,
-//         avgRating: "4.0",
-//         totalRatings: 100,
-//         new: false,
-//       },
-//       subtype: "basic",
-//     },
-//     {
-//       type: "restaurant",
-//       data: {
-//         type: "F",
-//         id: "154755",
-//         name: "Mr. Brown",
-//         uuid: "6909c51d-b213-406d-89ba-792525dcfb2f",
-//         city: "10459",
-//         area: "Gautam Buddha Nagar",
-//         totalRatingsString: "20+ ratings",
-//         cloudinaryImageId: "etzvbwop5vt9npwn79xd",
-//         cuisines: ["Desserts", "Beverages", "Bakery"],
-//         tags: [],
-//         costForTwo: 20000,
-//         costForTwoString: "₹200 FOR TWO",
-//         deliveryTime: 23,
-//         minDeliveryTime: 23,
-//         maxDeliveryTime: 23,
-//         slaString: "23 MINS",
-//         lastMileTravel: 1.7999999523162842,
-//         slugs: {
-//           restaurant: "mr-brown-raj-nagar",
-//           city: "noida-1",
-//         },
-//         cityState: "10459",
-//         address:
-//           "3D-18M, Marigold Court, HSSC, Wave City,Center, Plot No. CC001, Sector 32, Noida,NOIDA CITY ZONE-3, Gautam Buddha Nagar,Uttar Pradesh-201307",
-//         locality: "NOIDA CITY ZONE-3,Sector 32",
-//         parentId: 2262,
-//         unserviceable: false,
-//         veg: true,
-//         select: false,
-//         favorite: false,
-//         tradeCampaignHeaders: [],
-//         aggregatedDiscountInfo: {
-//           header: "50% off",
-//           shortDescriptionList: [
-//             {
-//               meta: "50% off | Use WELCOME50",
-//               discountType: "Percentage",
-//               operationType: "RESTAURANT",
-//             },
-//           ],
-//           descriptionList: [
-//             {
-//               meta: "50% off up to ₹100 | Use code WELCOME50",
-//               discountType: "Percentage",
-//               operationType: "RESTAURANT",
-//             },
-//           ],
-//           subHeader: "",
-//           headerType: 0,
-//           superFreedel: "",
-//         },
-//         aggregatedDiscountInfoV2: {
-//           header: "50% OFF",
-//           shortDescriptionList: [
-//             {
-//               meta: "Use WELCOME50",
-//               discountType: "Percentage",
-//               operationType: "RESTAURANT",
-//             },
-//           ],
-//           descriptionList: [
-//             {
-//               meta: "50% off up to ₹100 | Use code WELCOME50",
-//               discountType: "Percentage",
-//               operationType: "RESTAURANT",
-//             },
-//           ],
-//           subHeader: "",
-//           headerType: 0,
-//           superFreedel: "",
-//         },
-//         chain: [],
-//         feeDetails: {
-//           fees: [],
-//           totalFees: 0,
-//           message: "",
-//           title: "",
-//           amount: "",
-//           icon: "",
-//         },
-//         availability: {
-//           opened: true,
-//           nextOpenMessage: "",
-//           nextCloseMessage: "",
-//         },
-//         longDistanceEnabled: 0,
-//         rainMode: "NONE",
-//         thirdPartyAddress: false,
-//         thirdPartyVendor: "",
-//         adTrackingID: "",
-//         badges: {
-//           imageBased: [],
-//           textBased: [],
-//           textExtendedBadges: [],
-//         },
-//         lastMileTravelString: "1.7 kms",
-//         hasSurge: false,
-//         sla: {
-//           restaurantId: "154755",
-//           deliveryTime: 23,
-//           minDeliveryTime: 23,
-//           maxDeliveryTime: 23,
-//           lastMileTravel: 1.7999999523162842,
-//           lastMileDistance: 0,
-//           serviceability: "SERVICEABLE",
-//           rainMode: "NONE",
-//           longDistance: "NOT_LONG_DISTANCE",
-//           preferentialService: false,
-//           iconType: "EMPTY",
-//         },
-//         promoted: false,
-//         avgRating: "4.4",
-//         totalRatings: 20,
-//         new: false,
-//       },
-//       subtype: "basic",
-//     },
-//   ];
 exports.IMG_CDN_URL = IMG_CDN_URL;
+var Restaurant_Menu_List = "https://www.swiggy.com/dapi/menu/v4/full?lat=26.4403848&lng=80.3160714&menuId=";
+exports.Restaurant_Menu_List = Restaurant_Menu_List;
 var resturantList = [{
   "type": "restaurant",
   "data": {
@@ -38140,9 +37531,7 @@ var Body = function Body() {
         while (1) switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.4403848&lng=80.3160714&page_type=DESKTOP_WEB_LISTING", {
-              credentials: 'same-origin'
-            });
+            return fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.4403848&lng=80.3160714&page_type=DESKTOP_WEB_LISTING");
           case 2:
             data = _context.sent;
             _context.next = 5;
@@ -38406,20 +37795,15 @@ var Error = function Error() {
 };
 var _default = Error;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/dist/index.js"}],"src/components/ResturantMenu.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/dist/index.js"}],"src/utils/useRestaurant.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var _react = _interopRequireWildcard(require("react"));
-var _reactRouterDom = require("react-router-dom");
+var _react = require("react");
 var _Config = require("../Config");
-var _ShimmerUI = _interopRequireDefault(require("./ShimmerUI"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, defineProperty = Object.defineProperty || function (obj, key, desc) { obj[key] = desc.value; }, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return defineProperty(generator, "_invoke", { value: makeInvokeMethod(innerFn, self, context) }), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; defineProperty(this, "_invoke", { value: function value(method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; } function maybeInvokeDelegate(delegate, context) { var methodName = context.method, method = delegate.iterator[methodName]; if (undefined === method) return context.delegate = null, "throw" === methodName && delegate.iterator.return && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method) || "return" !== methodName && (context.method = "throw", context.arg = new TypeError("The iterator does not provide a '" + methodName + "' method")), ContinueSentinel; var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, defineProperty(Gp, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), defineProperty(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (val) { var object = Object(val), keys = []; for (var key in object) keys.push(key); return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, catch: function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -38430,38 +37814,32 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i.return && (_r = _i.return(), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-var ResturantMenu = function ResturantMenu() {
-  var _restaurant$menu;
-  var data = (0, _reactRouterDom.useParams)();
-  var id = data.id;
-  // console.log(data);
-  var _useState = (0, _react.useState)(),
+// make our own custom Hook 'useRestaurant'
+var useRestaurant = function useRestaurant(id) {
+  var _useState = (0, _react.useState)(null),
     _useState2 = _slicedToArray(_useState, 2),
     restaurant = _useState2[0],
     setRestaurant = _useState2[1];
   (0, _react.useEffect)(function () {
-    //call back function call
-    getMenuDetails();
+    getRestaurantInfo();
   }, []);
-  function getMenuDetails() {
-    return _getMenuDetails.apply(this, arguments);
+  function getRestaurantInfo() {
+    return _getRestaurantInfo.apply(this, arguments);
   }
-  function _getMenuDetails() {
-    _getMenuDetails = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+  function _getRestaurantInfo() {
+    _getRestaurantInfo = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
       var data, json;
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return fetch("https://www.swiggy.com/dapi/menu/v4/full?lat=26.4403848&lng=80.3160714&menuId=" + id);
+            return fetch(_Config.Restaurant_Menu_List + id);
           case 2:
             data = _context.sent;
             _context.next = 5;
             return data.json();
           case 5:
             json = _context.sent;
-            // console.log(json.data);
-
             setRestaurant(json.data);
           case 7:
           case "end":
@@ -38469,8 +37847,32 @@ var ResturantMenu = function ResturantMenu() {
         }
       }, _callee);
     }));
-    return _getMenuDetails.apply(this, arguments);
+    return _getRestaurantInfo.apply(this, arguments);
   }
+  return restaurant;
+};
+var _default = useRestaurant;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","../Config":"src/Config.js"}],"src/components/ResturantMenu.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _react = _interopRequireWildcard(require("react"));
+var _reactRouterDom = require("react-router-dom");
+var _Config = require("../Config");
+var _ShimmerUI = _interopRequireDefault(require("./ShimmerUI"));
+var _useRestaurant = _interopRequireDefault(require("../utils/useRestaurant"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+var ResturantMenu = function ResturantMenu() {
+  var _restaurant$menu;
+  var _useParams = (0, _reactRouterDom.useParams)(),
+    id = _useParams.id;
+  var restaurant = (0, _useRestaurant.default)(id);
   return !restaurant ? /*#__PURE__*/_react.default.createElement(_ShimmerUI.default, null) : /*#__PURE__*/_react.default.createElement("div", {
     className: "menu"
   }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, restaurant.name), /*#__PURE__*/_react.default.createElement("img", {
@@ -38479,15 +37881,106 @@ var ResturantMenu = function ResturantMenu() {
   }), /*#__PURE__*/_react.default.createElement("h1", null, "Menu id : ", restaurant.id), /*#__PURE__*/_react.default.createElement("h2", null, restaurant.area, " , ", restaurant.city), /*#__PURE__*/_react.default.createElement("h4", null, restaurant.avgRating, " Star"), /*#__PURE__*/_react.default.createElement("p", null, restaurant.costForTwoMsg)), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Menu"), /*#__PURE__*/_react.default.createElement("ul", null, Object.values(restaurant === null || restaurant === void 0 ? void 0 : (_restaurant$menu = restaurant.menu) === null || _restaurant$menu === void 0 ? void 0 : _restaurant$menu.items).map(function (item) {
     return /*#__PURE__*/_react.default.createElement("li", {
       key: item.id
-    }, item.name, " : ", item.price);
+    }, item.name, " : ", item.price / 10 / 10 + ".00");
   }))));
 };
 var _default = ResturantMenu;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/dist/index.js","../Config":"src/Config.js","./ShimmerUI":"src/components/ShimmerUI.js"}],"src/App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/dist/index.js","../Config":"src/Config.js","./ShimmerUI":"src/components/ShimmerUI.js","../utils/useRestaurant":"src/utils/useRestaurant.js"}],"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+var bundleURL = null;
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
+  }
+  return bundleURL;
+}
+function getBundleURL() {
+  // Attempt to find the URL of the current script and use that as the base URL
+  try {
+    throw new Error();
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+    if (matches) {
+      return getBaseURL(matches[0]);
+    }
+  }
+  return '/';
+}
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)?\/[^/]+(?:\?.*)?$/, '$1') + '/';
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+},{}],"node_modules/parcel-bundler/src/builtins/bundle-loader.js":[function(require,module,exports) {
+var getBundleURL = require('./bundle-url').getBundleURL;
+function loadBundlesLazy(bundles) {
+  if (!Array.isArray(bundles)) {
+    bundles = [bundles];
+  }
+  var id = bundles[bundles.length - 1];
+  try {
+    return Promise.resolve(require(id));
+  } catch (err) {
+    if (err.code === 'MODULE_NOT_FOUND') {
+      return new LazyPromise(function (resolve, reject) {
+        loadBundles(bundles.slice(0, -1)).then(function () {
+          return require(id);
+        }).then(resolve, reject);
+      });
+    }
+    throw err;
+  }
+}
+function loadBundles(bundles) {
+  return Promise.all(bundles.map(loadBundle));
+}
+var bundleLoaders = {};
+function registerBundleLoader(type, loader) {
+  bundleLoaders[type] = loader;
+}
+module.exports = exports = loadBundlesLazy;
+exports.load = loadBundles;
+exports.register = registerBundleLoader;
+var bundles = {};
+function loadBundle(bundle) {
+  var id;
+  if (Array.isArray(bundle)) {
+    id = bundle[1];
+    bundle = bundle[0];
+  }
+  if (bundles[bundle]) {
+    return bundles[bundle];
+  }
+  var type = (bundle.substring(bundle.lastIndexOf('.') + 1, bundle.length) || bundle).toLowerCase();
+  var bundleLoader = bundleLoaders[type];
+  if (bundleLoader) {
+    return bundles[bundle] = bundleLoader(getBundleURL() + bundle).then(function (resolved) {
+      if (resolved) {
+        module.bundle.register(id, resolved);
+      }
+      return resolved;
+    }).catch(function (e) {
+      delete bundles[bundle];
+      throw e;
+    });
+  }
+}
+function LazyPromise(executor) {
+  this.executor = executor;
+  this.promise = null;
+}
+LazyPromise.prototype.then = function (onSuccess, onError) {
+  if (this.promise === null) this.promise = new Promise(this.executor);
+  return this.promise.then(onSuccess, onError);
+};
+LazyPromise.prototype.catch = function (onError) {
+  if (this.promise === null) this.promise = new Promise(this.executor);
+  return this.promise.catch(onError);
+};
+},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/App.js":[function(require,module,exports) {
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 var _client = _interopRequireDefault(require("react-dom/client"));
 var _Header = _interopRequireDefault(require("./components/Header"));
 var _Body = _interopRequireDefault(require("./components/Body"));
@@ -38498,7 +37991,10 @@ var _Contact = _interopRequireDefault(require("./components/Contact"));
 var _Error = _interopRequireDefault(require("./components/Error"));
 var _ResturantMenu = _interopRequireDefault(require("./components/ResturantMenu"));
 var _Profile = _interopRequireDefault(require("./components/Profile"));
+var _ShimmerUI = _interopRequireDefault(require("./components/ShimmerUI"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 /**
  *  Header
  *    - Logo 
@@ -38517,6 +38013,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * 
  */
 
+// import Instamart from "./components/Instamart";
+
+// lazy loading
+var Instamart = (0, _react.lazy)(function () {
+  return require("_bundle_loader")(require.resolve("./components/Instamart"));
+});
 var App = function App() {
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_Header.default, null), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Outlet, null), /*#__PURE__*/_react.default.createElement(_Footer.default, null));
 };
@@ -38540,13 +38042,18 @@ var approuter = (0, _reactRouterDom.createBrowserRouter)([{
   }, {
     path: "/restaurant/:id",
     element: /*#__PURE__*/_react.default.createElement(_ResturantMenu.default, null)
+  }, {
+    path: "/instamart",
+    element: /*#__PURE__*/_react.default.createElement(_react.Suspense, {
+      fallback: /*#__PURE__*/_react.default.createElement(_ShimmerUI.default, null)
+    }, /*#__PURE__*/_react.default.createElement(Instamart, null))
   }]
 }]);
 var root = _client.default.createRoot(document.getElementById("root"));
 root.render( /*#__PURE__*/_react.default.createElement(_reactRouterDom.RouterProvider, {
   router: approuter
 }));
-},{"react":"node_modules/react/index.js","react-dom/client":"node_modules/react-dom/client.js","./components/Header":"src/components/Header.js","./components/Body":"src/components/Body.js","./components/Footer":"src/components/Footer.js","react-router-dom":"node_modules/react-router-dom/dist/index.js","./components/About":"src/components/About.js","./components/Contact":"src/components/Contact.js","./components/Error":"src/components/Error.js","./components/ResturantMenu":"src/components/ResturantMenu.js","./components/Profile":"src/components/Profile.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-dom/client":"node_modules/react-dom/client.js","./components/Header":"src/components/Header.js","./components/Body":"src/components/Body.js","./components/Footer":"src/components/Footer.js","react-router-dom":"node_modules/react-router-dom/dist/index.js","./components/About":"src/components/About.js","./components/Contact":"src/components/Contact.js","./components/Error":"src/components/Error.js","./components/ResturantMenu":"src/components/ResturantMenu.js","./components/Profile":"src/components/Profile.js","_bundle_loader":"node_modules/parcel-bundler/src/builtins/bundle-loader.js","./components/Instamart":[["Instamart.badd5948.js","src/components/Instamart.js"],"Instamart.badd5948.js.map","src/components/Instamart.js"],"./components/ShimmerUI":"src/components/ShimmerUI.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -38715,5 +38222,26 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","src/App.js"], null)
+},{}],"node_modules/parcel-bundler/src/builtins/loaders/browser/js-loader.js":[function(require,module,exports) {
+module.exports = function loadJSBundle(bundle) {
+  return new Promise(function (resolve, reject) {
+    var script = document.createElement('script');
+    script.async = true;
+    script.type = 'text/javascript';
+    script.charset = 'utf-8';
+    script.src = bundle;
+    script.onerror = function (e) {
+      script.onerror = script.onload = null;
+      reject(e);
+    };
+    script.onload = function () {
+      script.onerror = script.onload = null;
+      resolve();
+    };
+    document.getElementsByTagName('head')[0].appendChild(script);
+  });
+};
+},{}],0:[function(require,module,exports) {
+var b=require("node_modules/parcel-bundler/src/builtins/bundle-loader.js");b.register("js",require("node_modules/parcel-bundler/src/builtins/loaders/browser/js-loader.js"));
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js",0,"src/App.js"], null)
 //# sourceMappingURL=/App.f684dadd.js.map

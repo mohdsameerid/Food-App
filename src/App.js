@@ -26,6 +26,12 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import ResturantMenu from "./components/ResturantMenu";
 import Profile from "./components/Profile";
+// import Instamart from "./components/Instamart";
+
+// lazy loading
+const Instamart = lazy(() => import("./components/Instamart"));
+import { lazy ,Suspense} from "react";
+import ShimmerUI from "./components/ShimmerUI";
 
 const App = () => {
     return (
@@ -63,6 +69,10 @@ const approuter = createBrowserRouter([
             {
                 path: "/restaurant/:id",
                 element: <ResturantMenu />
+            },
+            {
+                path: "/instamart",
+                element: <Suspense fallback={<ShimmerUI />}><Instamart /></Suspense>
             }
         ]
     }

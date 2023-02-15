@@ -24,10 +24,8 @@ const Body = () => {
     },[]);
 
     async function getRestraunt(){
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.4403848&lng=80.3160714&page_type=DESKTOP_WEB_LISTING" , 
-        {
-            credentials: 'same-origin'
-          });
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.4403848&lng=80.3160714&page_type=DESKTOP_WEB_LISTING"  
+        );
         const json = await data.json();
         // console.log(json);
 
