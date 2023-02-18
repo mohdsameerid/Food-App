@@ -8,3 +8,9 @@ const Title = () => {
     );
  }
 export default Title;
+
+
+
+
+// *NOTE =>
+// You always have to implement images using CDN..

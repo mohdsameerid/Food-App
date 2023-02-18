@@ -35949,7 +35949,8 @@ var Title = function Title() {
     alt: "Logo_image "
   });
 };
-var _default = Title;
+var _default = Title; // *NOTE =>
+// You always have to implement images using CDN..
 exports.default = _default;
 },{"react":"node_modules/react/index.js"}],"src/components/Header.js":[function(require,module,exports) {
 "use strict";
