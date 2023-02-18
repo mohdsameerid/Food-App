@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import useOnline from "../utils/useOnline";
-import Title from "./Logo";
+import useOnline from "../hooks/useOnline";
+import Title from "../assets/Logo";
 
 const Header = () => {
     const[login, setLogin] = useState(false);

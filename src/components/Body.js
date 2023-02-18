@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import ShimmerUI from "./ShimmerUI";
 import { Link } from "react-router-dom";
 import {filterdata } from "../utils/helper.js"
-import useOnline from "../utils/useOnline.js";
+import useOnline from "../hooks/useOnline.js";
 
 const Body = () => {
     const[searchText, setSearchText] = useState("");

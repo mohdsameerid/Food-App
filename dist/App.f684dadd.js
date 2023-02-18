@@ -35902,7 +35902,7 @@ function warning(cond, message) {
     } catch (e) {}
   }
 } //#endregion
-},{"react":"node_modules/react/index.js","react-router":"node_modules/react-router/dist/index.js","@remix-run/router":"node_modules/@remix-run/router/dist/router.js"}],"src/utils/useOnline.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router":"node_modules/react-router/dist/index.js","@remix-run/router":"node_modules/@remix-run/router/dist/router.js"}],"src/hooks/useOnline.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35933,7 +35933,7 @@ var useOnline = function useOnline() {
 };
 var _default = useOnline;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"src/components/Logo.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js"}],"src/assets/Logo.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35960,8 +35960,8 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _reactRouterDom = require("react-router-dom");
-var _useOnline = _interopRequireDefault(require("../utils/useOnline"));
-var _Logo = _interopRequireDefault(require("./Logo"));
+var _useOnline = _interopRequireDefault(require("../hooks/useOnline"));
+var _Logo = _interopRequireDefault(require("../assets/Logo"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -36002,7 +36002,7 @@ var Header = function Header() {
 };
 var _default = Header;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/dist/index.js","../utils/useOnline":"src/utils/useOnline.js","./Logo":"src/components/Logo.js"}],"src/Config.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/dist/index.js","../hooks/useOnline":"src/hooks/useOnline.js","../assets/Logo":"src/assets/Logo.js"}],"src/Config.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37544,7 +37544,7 @@ var _react = _interopRequireWildcard(require("react"));
 var _ShimmerUI = _interopRequireDefault(require("./ShimmerUI"));
 var _reactRouterDom = require("react-router-dom");
 var _helper = require("../utils/helper.js");
-var _useOnline = _interopRequireDefault(require("../utils/useOnline.js"));
+var _useOnline = _interopRequireDefault(require("../hooks/useOnline.js"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -37639,7 +37639,7 @@ var Body = function Body() {
 };
 var _default = Body;
 exports.default = _default;
-},{"../Config":"src/Config.js","./ResturantCard":"src/components/ResturantCard.js","react":"node_modules/react/index.js","./ShimmerUI":"src/components/ShimmerUI.js","react-router-dom":"node_modules/react-router-dom/dist/index.js","../utils/helper.js":"src/utils/helper.js","../utils/useOnline.js":"src/utils/useOnline.js"}],"src/components/Footer.js":[function(require,module,exports) {
+},{"../Config":"src/Config.js","./ResturantCard":"src/components/ResturantCard.js","react":"node_modules/react/index.js","./ShimmerUI":"src/components/ShimmerUI.js","react-router-dom":"node_modules/react-router-dom/dist/index.js","../utils/helper.js":"src/utils/helper.js","../hooks/useOnline.js":"src/hooks/useOnline.js"}],"src/components/Footer.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37776,7 +37776,7 @@ var Error = function Error() {
 };
 var _default = Error;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/dist/index.js"}],"src/utils/useRestaurant.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/dist/index.js"}],"src/hooks/useRestaurant.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37845,7 +37845,7 @@ var _react = _interopRequireWildcard(require("react"));
 var _reactRouterDom = require("react-router-dom");
 var _Config = require("../Config");
 var _ShimmerUI = _interopRequireDefault(require("./ShimmerUI"));
-var _useRestaurant = _interopRequireDefault(require("../utils/useRestaurant"));
+var _useRestaurant = _interopRequireDefault(require("../hooks/useRestaurant"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -37867,7 +37867,7 @@ var ResturantMenu = function ResturantMenu() {
 };
 var _default = ResturantMenu;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/dist/index.js","../Config":"src/Config.js","./ShimmerUI":"src/components/ShimmerUI.js","../utils/useRestaurant":"src/utils/useRestaurant.js"}],"src/components/Profile.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/dist/index.js","../Config":"src/Config.js","./ShimmerUI":"src/components/ShimmerUI.js","../hooks/useRestaurant":"src/hooks/useRestaurant.js"}],"src/components/Profile.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
