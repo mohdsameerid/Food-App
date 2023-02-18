@@ -1,16 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
-const Title = () => {
-    return (
-        <img className="logo" 
-         src= "https://tasteofnovascotia.com/wp-content/uploads/2015/02/The-Canteen-logo.png"
-         alt="Logo_image "/>
-    );
- }
+import useOnline from "../utils/useOnline";
+import Title from "./Logo";
 
 const Header = () => {
     const[login, setLogin] = useState(false);
+    const isOnlineTick = useOnline();  // custom hook  
+
     return (
         <div className="header">
         <Title />
@@ -23,6 +19,10 @@ const Header = () => {
                 <li> <Link to="/instamart"> Instamart </Link></li>
             </ul>
         </div>
+        <div>
+            <h3>{ isOnlineTick ? "✅" : "⛔" }</h3> 
+        </div>
+
         { (login) ? <button onClick={()=> setLogin(false) }>Logout</button> 
             : <button onClick={()=> setLogin(true) } >Login</button> 
         }

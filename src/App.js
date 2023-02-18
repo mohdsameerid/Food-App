@@ -21,7 +21,8 @@
  import Body from "./components/Body";
  import Footer from "./components/Footer"
 import { createBrowserRouter , RouterProvider , Outlet} from "react-router-dom";
-import About from "./components/About";
+// import About from "./components/About";
+const About = lazy(() => import("./components/About"));  // dynamic data loading
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import ResturantMenu from "./components/ResturantMenu";
@@ -54,7 +55,11 @@ const approuter = createBrowserRouter([
             },
             {
                 path: "/about",
-                element: <About />,
+                element: (
+                    <Suspense fallback={<h1>About Data is loading....</h1>}>
+                        <About />
+                    </Suspense>
+                ),
                 children:[
                     {
                         path: "profile",
@@ -72,7 +77,11 @@ const approuter = createBrowserRouter([
             },
             {
                 path: "/instamart",
-                element: <Suspense fallback={<ShimmerUI />}><Instamart /></Suspense>
+                element: (
+                        <Suspense fallback={<ShimmerUI />}>
+                            <Instamart />
+                        </Suspense> 
+                )
             }
         ]
     }
