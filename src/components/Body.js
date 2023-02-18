@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import ShimmerUI from "./ShimmerUI";
 import { Link } from "react-router-dom";
 import {filterdata } from "../utils/helper.js"
-import useOnline from "../hooks/useOnline.js";
+import useOnline from "../hooks/useOnline";
 
 const Body = () => {
     const[searchText, setSearchText] = useState("");
@@ -28,7 +28,7 @@ const Body = () => {
 
     const isOnline = useOnline();
     if(!isOnline){
-        return <h1> ⛔ Check Your Internet Connection , Look like you are Offline ....... </h1>;
+        return <h1>check your internet connection ..</h1>
     }
     
     // if Resturant.length == 0 => Shimmer UI

@@ -37545,7 +37545,7 @@ var _react = _interopRequireWildcard(require("react"));
 var _ShimmerUI = _interopRequireDefault(require("./ShimmerUI"));
 var _reactRouterDom = require("react-router-dom");
 var _helper = require("../utils/helper.js");
-var _useOnline = _interopRequireDefault(require("../hooks/useOnline.js"));
+var _useOnline = _interopRequireDefault(require("../hooks/useOnline"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -37608,7 +37608,7 @@ var Body = function Body() {
   }
   var isOnline = (0, _useOnline.default)();
   if (!isOnline) {
-    return /*#__PURE__*/_react.default.createElement("h1", null, " \u26D4 Check Your Internet Connection , Look like you are Offline ....... ");
+    return /*#__PURE__*/_react.default.createElement("h1", null, "check your internet connection ..");
   }
 
   // if Resturant.length == 0 => Shimmer UI
@@ -37640,7 +37640,7 @@ var Body = function Body() {
 };
 var _default = Body;
 exports.default = _default;
-},{"../Config":"src/Config.js","./ResturantCard":"src/components/ResturantCard.js","react":"node_modules/react/index.js","./ShimmerUI":"src/components/ShimmerUI.js","react-router-dom":"node_modules/react-router-dom/dist/index.js","../utils/helper.js":"src/utils/helper.js","../hooks/useOnline.js":"src/hooks/useOnline.js"}],"src/components/Footer.js":[function(require,module,exports) {
+},{"../Config":"src/Config.js","./ResturantCard":"src/components/ResturantCard.js","react":"node_modules/react/index.js","./ShimmerUI":"src/components/ShimmerUI.js","react-router-dom":"node_modules/react-router-dom/dist/index.js","../utils/helper.js":"src/utils/helper.js","../hooks/useOnline":"src/hooks/useOnline.js"}],"src/components/Footer.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38074,7 +38074,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63848" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54216" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
