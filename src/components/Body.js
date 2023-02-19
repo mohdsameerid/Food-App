@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import ShimmerUI from "./ShimmerUI";
 import { Link } from "react-router-dom";
 import {filterdata } from "../utils/helper.js"
-import useOnline from "../hooks/useOnline";
+import useOnline from "../hooks/useOnline.js"
 
 const Body = () => {
     const[searchText, setSearchText] = useState("");
@@ -17,7 +17,7 @@ const Body = () => {
     },[]);
 
     async function getRestraunt(){
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.4403848&lng=80.3160714&page_type=DESKTOP_WEB_LISTING" 
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.4403848&lng=80.3160714&page_type=DESKTOP_WEB_LISTING"  
         );
         const json = await data.json();
         // console.log(json);
@@ -28,7 +28,7 @@ const Body = () => {
 
     const isOnline = useOnline();
     if(!isOnline){
-        return <h1>check your internet connection ..</h1>
+        return <h1> Check your internet connetion .</h1>
     }
     
     // if Resturant.length == 0 => Shimmer UI
