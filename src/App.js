@@ -22,7 +22,7 @@
  import Footer from "./components/Footer"
 import { createBrowserRouter , RouterProvider , Outlet} from "react-router-dom";
 // import About from "./components/About";
-const About = lazy(() => import("./components/About"));  // dynamic data loading
+const About = lazy(() => import("./components/About"));  // dynamic data
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import ResturantMenu from "./components/ResturantMenu";

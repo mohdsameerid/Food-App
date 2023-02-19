@@ -35921,13 +35921,19 @@ var useOnline = function useOnline() {
     _useState2 = _slicedToArray(_useState, 2),
     isOnline = _useState2[0],
     setIsOnline = _useState2[1];
+  var handleOnline = function handleOnline() {
+    setIsOnline(true);
+  };
+  var handleOffline = function handleOffline() {
+    setIsOnline(false);
+  };
   (0, _react.useEffect)(function () {
-    window.addEventListener("online", function () {
-      setIsOnline(true);
-    });
-    window.addEventListener("offline", function () {
-      setIsOnline(false);
-    });
+    window.addEventListener("online", handleOnline);
+    window.addEventListener("offline", handleOffline);
+    return function () {
+      window.removeEventListener("online", handleOnline);
+      window.removeEventListener("offline", handleOffline);
+    };
   }, []);
   return isOnline;
 };
@@ -38005,7 +38011,7 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 // import About from "./components/About";
 var About = (0, _react.lazy)(function () {
   return require("_bundle_loader")(require.resolve("./components/About"));
-}); // dynamic data loading
+}); // dynamic data
 
 // import Instamart from "./components/Instamart";
 
@@ -38074,7 +38080,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54216" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53682" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
