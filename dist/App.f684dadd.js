@@ -35950,7 +35950,7 @@ var _react = _interopRequireDefault(require("react"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 var Title = function Title() {
   return /*#__PURE__*/_react.default.createElement("img", {
-    className: "logo",
+    className: "h-24",
     src: "https://tasteofnovascotia.com/wp-content/uploads/2015/02/The-Canteen-logo.png",
     alt: "Logo_image "
   });
@@ -35986,18 +35986,34 @@ var Header = function Header() {
   var isOnlineTick = (0, _useOnline.default)(); // custom hook  
 
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: "header"
+    className: "flex justify-between bg-yellow-200"
   }, /*#__PURE__*/_react.default.createElement(_Logo.default, null), /*#__PURE__*/_react.default.createElement("div", {
-    className: "nav-items"
-  }, /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement("li", null, " ", /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    className: ""
+  }, /*#__PURE__*/_react.default.createElement("ul", {
+    className: "flex py-8"
+  }, /*#__PURE__*/_react.default.createElement("li", {
+    className: "px-2"
+  }, " ", /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/"
-  }, " Home ")), /*#__PURE__*/_react.default.createElement("li", null, " ", /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  }, " Home ")), /*#__PURE__*/_react.default.createElement("li", {
+    className: "px-2"
+  }, " ", /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/about"
-  }, " About ")), /*#__PURE__*/_react.default.createElement("li", null, " ", /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  }, " About ")), /*#__PURE__*/_react.default.createElement("li", {
+    className: "px-2"
+  }, " ", /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/contact"
-  }, " Contact ")), /*#__PURE__*/_react.default.createElement("li", null, "cart"), /*#__PURE__*/_react.default.createElement("li", null, " ", /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  }, " Contact ")), /*#__PURE__*/_react.default.createElement("li", {
+    className: "px-2"
+  }, "cart"), /*#__PURE__*/_react.default.createElement("li", {
+    className: "px-2"
+  }, " ", /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/instamart"
-  }, " Instamart ")))), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h3", null, isOnlineTick ? "✅" : "⛔")), login ? /*#__PURE__*/_react.default.createElement("button", {
+  }, " Instamart ")))), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h3", {
+    className: "m-4 p-4"
+  }, isOnlineTick ? "✅" : "⛔")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "m-4 p-4"
+  }, login ? /*#__PURE__*/_react.default.createElement("button", {
     onClick: function onClick() {
       return setLogin(false);
     }
@@ -36005,7 +36021,7 @@ var Header = function Header() {
     onClick: function onClick() {
       return setLogin(true);
     }
-  }, "Login"));
+  }, "Login")));
 };
 var _default = Header;
 exports.default = _default;
@@ -37496,11 +37512,13 @@ var ResturantCard = function ResturantCard(_ref) {
     cuisines = _ref.cuisines;
   var url = _Config.IMG_CDN_URL + cloudinaryImageId;
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: "card"
+    className: "w-52 h-64 shadow-lg bg-yellow-50 m-2 p-4 "
   }, /*#__PURE__*/_react.default.createElement("img", {
     src: url,
     alt: "Img"
-  }), /*#__PURE__*/_react.default.createElement("h3", null, " ", name), /*#__PURE__*/_react.default.createElement("h4", null, " ", cuisines.join(", "), " "), /*#__PURE__*/_react.default.createElement("h5", null, " ", lastMileTravelString, " "));
+  }), /*#__PURE__*/_react.default.createElement("h3", {
+    className: "font-bold "
+  }, " ", name), /*#__PURE__*/_react.default.createElement("h4", null, " ", cuisines.join(", "), " "), /*#__PURE__*/_react.default.createElement("h5", null, " ", lastMileTravelString, " "));
 };
 exports.ResturantCard = ResturantCard;
 },{"react":"node_modules/react/index.js","../Config":"src/Config.js"}],"src/components/ShimmerUI.js":[function(require,module,exports) {
@@ -37620,23 +37638,27 @@ var Body = function Body() {
   // if Resturant.length == 0 => Shimmer UI
   // else Show restaurant data  
   return allResturants.length == 0 ? /*#__PURE__*/_react.default.createElement(_ShimmerUI.default, null) : /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
-    className: "Seach-container"
+    className: "Seach-container  py-4 mx-1 mb-0 pb-0 "
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: ""
   }, /*#__PURE__*/_react.default.createElement("input", {
     type: "text",
-    placeholder: "Search",
+    placeholder: "Search Restaurant",
     value: searchText,
+    className: "mx-5 border-2 mr-1 p-1 px-2 focus:bg-gray-100",
     onChange: function onChange(e) {
       setSearchText(e.target.value);
     }
   }), /*#__PURE__*/_react.default.createElement("button", {
+    className: "bg-red-500 hover:bg-gray-600 text-white w-16 rounded-lg  p-1 ",
     onClick: function onClick() {
       // (1) need to filter data 
       var data = (0, _helper.filterdata)(searchText, allResturants);
       // (2) set data
       setFilteredResturants(data);
     }
-  }, " Search ")), /*#__PURE__*/_react.default.createElement("div", {
-    className: "restrauntant-list"
+  }, " Search "))), /*#__PURE__*/_react.default.createElement("div", {
+    className: "restrauntant-list  flex flex-wrap"
   }, filteredResturants.length > 0 ? filteredResturants.map(function (rest) {
     return /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
       to: "/restaurant/" + rest.data.id,
@@ -37657,7 +37679,7 @@ var _react = _interopRequireDefault(require("react"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 var Footer = function Footer() {
   return /*#__PURE__*/_react.default.createElement("h1", {
-    className: "footer"
+    className: "footer bg-yellow-200 text-center"
   }, " Footer ");
 };
 var _default = Footer;
@@ -38080,7 +38102,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53682" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56217" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

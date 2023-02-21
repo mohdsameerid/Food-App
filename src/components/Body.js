@@ -35,12 +35,14 @@ const Body = () => {
     // else Show restaurant data  
     return  (allResturants.length == 0) ?  <ShimmerUI /> :  (
         <>
-          <div className="Seach-container" >
-            <input type="text" placeholder="Search" value={searchText} 
+          <div className="Seach-container  py-4 mx-1 mb-0 pb-0 " >
+            <div className="">
+            <input type="text" placeholder="Search Restaurant" value={searchText}  
+            className="mx-5 border-2 mr-1 p-1 px-2 focus:bg-gray-100"
             onChange={ (e)=> {
                 setSearchText(e.target.value);
             } } /> 
-            <button 
+            <button className="bg-red-500 hover:bg-gray-600 text-white w-16 rounded-lg  p-1 "
             onClick={ ()=> {
                 // (1) need to filter data 
                 const data = filterdata(searchText, allResturants);
@@ -48,9 +50,11 @@ const Body = () => {
                 setFilteredResturants(data);
 
             }}> Search </button>
+            </div>
+            
           </div>
           
-          <div className="restrauntant-list">     
+          <div className="restrauntant-list  flex flex-wrap">     
           { (filteredResturants.length > 0 ) ?
             filteredResturants.map( (rest) => {
                return <Link to={"/restaurant/"+rest.data.id} key={rest.data.id} >
