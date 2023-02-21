@@ -10,19 +10,20 @@ const ResturantMenu = () =>{
 
     return !(restaurant) ? <ShimmerUI/> : (
         
-        <div className="menu">
-           <div>
-           <h1>{restaurant.name}</h1>
+        <div className="menu w-full   flex">
+           <div className="bg-yellow-50 p-10">
              <img src={IMG_CDN_URL + restaurant.cloudinaryImageId} width="300px"/>
+             <h1 className="font-bold my-2 text-2xl">{restaurant.name}</h1>
              <h1>Menu id : {restaurant.id}</h1>
              <h2>{restaurant.area} , {restaurant.city}</h2> 
              <h4>{restaurant.avgRating} Star</h4>
              <p>{restaurant.costForTwoMsg}</p>
            </div>
-           <div>
-            <h1>Menu</h1>
+           
+           <div className="bg-yellow-50 p-10">
+            <h1 className="font-bold text-xl">Menu</h1>
              <ul>{
-                   Object.values(restaurant?.menu?.items).map((item) => <li key={item.id}>{item.name} : {(item.price/10)/10 + ".00"}</li> )
+                   Object.values(restaurant?.menu?.items).map((item) => <li key={item.id}>{item.name}: {(item.price/10)/10 + ".00"}</li> )
                  }
             </ul>
            </div>

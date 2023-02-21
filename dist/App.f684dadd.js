@@ -36012,12 +36012,14 @@ var Header = function Header() {
   }, " Instamart ")))), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h3", {
     className: "m-4 p-4"
   }, isOnlineTick ? "✅" : "⛔")), /*#__PURE__*/_react.default.createElement("div", {
-    className: "m-4 p-4"
+    className: "m-1 p-5"
   }, login ? /*#__PURE__*/_react.default.createElement("button", {
+    className: "p-2 bg-green-600 rounded-lg",
     onClick: function onClick() {
       return setLogin(false);
     }
   }, "Logout") : /*#__PURE__*/_react.default.createElement("button", {
+    className: "p-2 bg-green-400 rounded-lg",
     onClick: function onClick() {
       return setLogin(true);
     }
@@ -37512,7 +37514,7 @@ var ResturantCard = function ResturantCard(_ref) {
     cuisines = _ref.cuisines;
   var url = _Config.IMG_CDN_URL + cloudinaryImageId;
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: "w-52 h-64 shadow-lg bg-yellow-50 m-2 p-4 "
+    className: "w-52 h-72 shadow-lg bg-yellow-50 m-2 p-4 "
   }, /*#__PURE__*/_react.default.createElement("img", {
     src: url,
     alt: "Img"
@@ -37532,15 +37534,33 @@ var _react = _interopRequireDefault(require("react"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 var ShimmerUI = function ShimmerUI() {
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: "restrauntant-list"
-  }, Array(10).fill("").map(function (e, index) {
+    className: "restrauntant-list flex flex-wrap pt-12"
+  }, Array(15).fill("").map(function (e, index) {
     return /*#__PURE__*/_react.default.createElement("div", {
-      key: index,
-      className: "shimmer-card"
-    });
+      className: "shimmer-card  flex flex-wrap ",
+      key: index
+    }, /*#__PURE__*/_react.default.createElement("div", {
+      className: "p-4 md:w-1/3"
+    }, /*#__PURE__*/_react.default.createElement("div", {
+      className: "w-48 h-64 border-2 border-gray-200 rounded-lg overflow-hidden"
+    }, /*#__PURE__*/_react.default.createElement("div", {
+      className: "lg:h-20 bg-gray-400 md:h-36 w-full object-cover object-center"
+    }), /*#__PURE__*/_react.default.createElement("div", {
+      className: "p-6"
+    }, /*#__PURE__*/_react.default.createElement("h1", {
+      className: "w-full mb-4 h-6 animate-pulse bg-gray-500"
+    }), /*#__PURE__*/_react.default.createElement("p", {
+      className: "leading-relaxed mb-3 w-full h-3 animate-pulse bg-gray-400"
+    }), /*#__PURE__*/_react.default.createElement("p", {
+      className: "leading-relaxed mb-3 w-2/3 h-3 animate-pulse bg-gray-400"
+    }), /*#__PURE__*/_react.default.createElement("p", {
+      className: "leading-relaxed mb-3 w-1/2 h-3 animate-pulse bg-gray-400"
+    }), /*#__PURE__*/_react.default.createElement("p", {
+      className: "leading-relaxed mb-3 w-1/2 h-3 animate-pulse bg-gray-400"
+    })))));
   }));
 };
-var _default = ShimmerUI;
+var _default = ShimmerUI; // shimmer-card w-52 h-64 bg-gray-200 m-2 p-4 
 exports.default = _default;
 },{"react":"node_modules/react/index.js"}],"src/utils/helper.js":[function(require,module,exports) {
 "use strict";
@@ -37679,7 +37699,7 @@ var _react = _interopRequireDefault(require("react"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 var Footer = function Footer() {
   return /*#__PURE__*/_react.default.createElement("h1", {
-    className: "footer bg-yellow-200 text-center"
+    className: "footer bg-yellow-200 text-center p-4 mt-8"
   }, " Footer ");
 };
 var _default = Footer;
@@ -37884,14 +37904,22 @@ var ResturantMenu = function ResturantMenu() {
     id = _useParams.id;
   var restaurant = (0, _useRestaurant.default)(id);
   return !restaurant ? /*#__PURE__*/_react.default.createElement(_ShimmerUI.default, null) : /*#__PURE__*/_react.default.createElement("div", {
-    className: "menu"
-  }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, restaurant.name), /*#__PURE__*/_react.default.createElement("img", {
+    className: "menu w-full   flex"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "bg-yellow-50 p-10"
+  }, /*#__PURE__*/_react.default.createElement("img", {
     src: _Config.IMG_CDN_URL + restaurant.cloudinaryImageId,
     width: "300px"
-  }), /*#__PURE__*/_react.default.createElement("h1", null, "Menu id : ", restaurant.id), /*#__PURE__*/_react.default.createElement("h2", null, restaurant.area, " , ", restaurant.city), /*#__PURE__*/_react.default.createElement("h4", null, restaurant.avgRating, " Star"), /*#__PURE__*/_react.default.createElement("p", null, restaurant.costForTwoMsg)), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Menu"), /*#__PURE__*/_react.default.createElement("ul", null, Object.values(restaurant === null || restaurant === void 0 ? void 0 : (_restaurant$menu = restaurant.menu) === null || _restaurant$menu === void 0 ? void 0 : _restaurant$menu.items).map(function (item) {
+  }), /*#__PURE__*/_react.default.createElement("h1", {
+    className: "font-bold my-2 text-2xl"
+  }, restaurant.name), /*#__PURE__*/_react.default.createElement("h1", null, "Menu id : ", restaurant.id), /*#__PURE__*/_react.default.createElement("h2", null, restaurant.area, " , ", restaurant.city), /*#__PURE__*/_react.default.createElement("h4", null, restaurant.avgRating, " Star"), /*#__PURE__*/_react.default.createElement("p", null, restaurant.costForTwoMsg)), /*#__PURE__*/_react.default.createElement("div", {
+    className: "bg-yellow-50 p-10"
+  }, /*#__PURE__*/_react.default.createElement("h1", {
+    className: "font-bold text-xl"
+  }, "Menu"), /*#__PURE__*/_react.default.createElement("ul", null, Object.values(restaurant === null || restaurant === void 0 ? void 0 : (_restaurant$menu = restaurant.menu) === null || _restaurant$menu === void 0 ? void 0 : _restaurant$menu.items).map(function (item) {
     return /*#__PURE__*/_react.default.createElement("li", {
       key: item.id
-    }, item.name, " : ", item.price / 10 / 10 + ".00");
+    }, item.name, ": ", item.price / 10 / 10 + ".00");
   }))));
 };
 var _default = ResturantMenu;

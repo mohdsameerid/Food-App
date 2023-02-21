@@ -22,9 +22,9 @@ const Header = () => {
         <div>
             <h3 className="m-4 p-4">{ isOnlineTick ? "✅" : "⛔" }</h3> 
         </div>
-        <div className="m-4 p-4">
-        { (login) ? <button onClick={()=> setLogin(false) }>Logout</button> 
-                    : <button onClick={()=> setLogin(true) } >Login</button> 
+        <div className="m-1 p-5">
+        { (login) ? <button className="p-2 bg-green-600 rounded-lg" onClick={()=> setLogin(false) }>Logout</button> 
+                    : <button className="p-2 bg-green-400 rounded-lg" onClick={()=> setLogin(true) } >Login</button> 
                 }
         </div>
     
