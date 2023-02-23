@@ -124,10 +124,195 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var _react = _interopRequireDefault(require("react"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _react = _interopRequireWildcard(require("react"));
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i.return && (_r = _i.return(), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+// const Section = ({ title, discription }) => {
+//   const [isvisble, setIsVisible] = useState(false);
+
+//   // build our own Acordian Component
+//   return (
+//     <div className="border border-red-200 bg-gray-300 p-5 m-5">
+//       <h1>{title}</h1>
+//       {isvisble ? (
+//         <button
+//           onClick={() => setIsVisible(false)}
+//           className="cursor-pointer  underline "
+//         >
+//           Hide
+//         </button>
+//       ) : (
+//         <button
+//           onClick={() => setIsVisible(true)}
+//           className="cursor-pointer underline "
+//         >
+//           Show
+//         </button>
+//       )}
+
+//       {isvisble && <p>{discription}</p>}
+//     </div>
+//   );
+// };
+
+// const Instamart = () => {
+//   return (
+//     <>
+//       <Section
+//         title="About"
+//         discription="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."
+//       />
+//       <Section
+//         title="Career"
+//         discription="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."
+//       />
+//       <Section
+//         title="Contact"
+//         discription="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."
+//       />
+//     </>
+//   );
+// };
+
+// Now with lifting the state up ---->
+// const Section = ({ title, discription, isvisble, setIsVisible }) => {
+//   // build our own Acordian Component
+//   return (
+//     <div className="border border-red-200 bg-gray-300 p-5 m-5">
+//       <h1>{title}</h1>
+//       {isvisble ? (
+//         <button
+//           onClick={() => setIsVisible(false)}
+//           className="cursor-pointer  underline "
+//         >
+//           Hide
+//         </button>
+//       ) : (
+//         <button
+//           onClick={() => setIsVisible(true)}
+//           className="cursor-pointer underline "
+//         >
+//           Show
+//         </button>
+//       )}
+
+//       {isvisble && <p>{discription}</p>}
+//     </div>
+//   );
+// };
+
+// const Instamart = () => {
+//     const[sectionConfig, setSectionConfig] = useState({
+//         ShowAbout: false,
+//         ShowCareer: false,
+//         ShowContact: false,
+//     });
+//   return (
+//     <>
+//       <Section
+//         title="About"
+//         discription="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."
+//         isvisble={sectionConfig.ShowAbout}
+//         setIsVisible={ ()=> {
+//             setSectionConfig({
+//                 ShowAbout: true,
+//                 ShowCareer: false,
+//                 ShowContact: false,
+//             })
+//         }}
+
+//       />
+//       <Section
+//         title="Career"
+//         discription="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."
+//         isvisble={sectionConfig.ShowCareer}
+//         setIsVisible={ ()=> {
+//             setSectionConfig({
+//                 ShowAbout: false,
+//                 ShowCareer: true,
+//                 ShowContact: false,
+//             })
+//         }}
+//       />
+//       <Section
+//         title="Contact"
+//         discription="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."
+//         isvisble={sectionConfig.ShowContact}
+//         setIsVisible={ ()=> {
+//             setSectionConfig({
+//                 ShowAbout: false,
+//                 ShowCareer: false,
+//                 ShowContact: true,
+//             })
+//         }}
+//       />
+//     </>
+//   );
+// };
+
+// Our code getting messy Think about this code    ----->
+// this code is alot more better than previous one, and Concept is also invaulved "Lifting the State Up"
+// this is perfect Acordian code.
+
+var Section = function Section(_ref) {
+  var title = _ref.title,
+    discription = _ref.discription,
+    isvisble = _ref.isvisble,
+    setIsVisible = _ref.setIsVisible,
+    setInVisble = _ref.setInVisble;
+  // build our own Acordian Component
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "border border-red-200 bg-gray-300 p-5 m-5"
+  }, /*#__PURE__*/_react.default.createElement("h1", null, title), isvisble ? /*#__PURE__*/_react.default.createElement("button", {
+    onClick: setInVisble,
+    className: "cursor-pointer  underline "
+  }, "Hide") : /*#__PURE__*/_react.default.createElement("button", {
+    onClick: setIsVisible,
+    className: "cursor-pointer underline "
+  }, "Show"), isvisble && /*#__PURE__*/_react.default.createElement("p", null, discription));
+};
 var Instamart = function Instamart() {
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h1", null, "Instamart page."), /*#__PURE__*/_react.default.createElement("h3", null, "1000 of components."));
+  var _useState = (0, _react.useState)(false),
+    _useState2 = _slicedToArray(_useState, 2),
+    isVisbleSection = _useState2[0],
+    setIsVisbleSection = _useState2[1];
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(Section, {
+    title: "About",
+    discription: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
+    isvisble: isVisbleSection === "about",
+    setIsVisible: function setIsVisible() {
+      return setIsVisbleSection("about");
+    },
+    setInVisble: function setInVisble() {
+      setIsVisbleSection("");
+    }
+  }), /*#__PURE__*/_react.default.createElement(Section, {
+    title: "Career",
+    discription: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
+    isvisble: isVisbleSection === "career",
+    setIsVisible: function setIsVisible() {
+      return setIsVisbleSection("career");
+    },
+    setInVisble: function setInVisble() {
+      setIsVisbleSection("");
+    }
+  }), /*#__PURE__*/_react.default.createElement(Section, {
+    title: "Contact",
+    discription: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
+    isvisble: isVisbleSection === "contact",
+    setIsVisible: function setIsVisible() {
+      return setIsVisbleSection("contact");
+    },
+    setInVisble: function setInVisble() {
+      setIsVisbleSection("");
+    }
+  }));
 };
 var _default = Instamart;
 exports.default = _default;
@@ -156,7 +341,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55336" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61150" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

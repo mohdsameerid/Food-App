@@ -37511,16 +37511,19 @@ var ResturantCard = function ResturantCard(_ref) {
   var name = _ref.name,
     lastMileTravelString = _ref.lastMileTravelString,
     cloudinaryImageId = _ref.cloudinaryImageId,
-    cuisines = _ref.cuisines;
+    cuisines = _ref.cuisines,
+    area = _ref.area;
   var url = _Config.IMG_CDN_URL + cloudinaryImageId;
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: "w-52 h-72 shadow-lg bg-yellow-50 m-2 p-4 "
+    className: "w-52 h-auto shadow-lg bg-yellow-50 m-2 p-4 "
   }, /*#__PURE__*/_react.default.createElement("img", {
     src: url,
     alt: "Img"
   }), /*#__PURE__*/_react.default.createElement("h3", {
     className: "font-bold "
-  }, " ", name), /*#__PURE__*/_react.default.createElement("h4", null, " ", cuisines.join(", "), " "), /*#__PURE__*/_react.default.createElement("h5", null, " ", lastMileTravelString, " "));
+  }, " ", name), /*#__PURE__*/_react.default.createElement("h4", null, " ", cuisines.join(", "), " "), /*#__PURE__*/_react.default.createElement("h5", null, " ", lastMileTravelString, " "), /*#__PURE__*/_react.default.createElement("p", {
+    className: "font-medium"
+  }, area));
 };
 exports.ResturantCard = ResturantCard;
 },{"react":"node_modules/react/index.js","../Config":"src/Config.js"}],"src/components/ShimmerUI.js":[function(require,module,exports) {
@@ -38130,7 +38133,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56217" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61150" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
