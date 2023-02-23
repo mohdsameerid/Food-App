@@ -35958,6 +35958,23 @@ var Title = function Title() {
 var _default = Title; // *NOTE =>
 // You always have to implement images using CDN..
 exports.default = _default;
+},{"react":"node_modules/react/index.js"}],"src/context/UserContext.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _react = require("react");
+var UserContext = (0, _react.createContext)({
+  user: {
+    name: "Dummy Name",
+    email: "dummy@gmial.com"
+  }
+});
+UserContext.displayName = "MineUserContext";
+var _default = UserContext;
+exports.default = _default;
 },{"react":"node_modules/react/index.js"}],"src/components/Header.js":[function(require,module,exports) {
 "use strict";
 
@@ -35969,6 +35986,7 @@ var _react = _interopRequireWildcard(require("react"));
 var _reactRouterDom = require("react-router-dom");
 var _useOnline = _interopRequireDefault(require("../hooks/useOnline"));
 var _Logo = _interopRequireDefault(require("../assets/Logo"));
+var _UserContext = _interopRequireDefault(require("../context/UserContext"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -35983,8 +36001,9 @@ var Header = function Header() {
     _useState2 = _slicedToArray(_useState, 2),
     login = _useState2[0],
     setLogin = _useState2[1];
-  var isOnlineTick = (0, _useOnline.default)(); // custom hook  
-
+  var isOnlineTick = (0, _useOnline.default)(); // custom hook
+  var _useContext = (0, _react.useContext)(_UserContext.default),
+    user = _useContext.user;
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "flex justify-between bg-yellow-200"
   }, /*#__PURE__*/_react.default.createElement(_Logo.default, null), /*#__PURE__*/_react.default.createElement("div", {
@@ -36009,9 +36028,17 @@ var Header = function Header() {
     className: "px-2"
   }, " ", /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/instamart"
-  }, " Instamart ")))), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h3", {
+  }, " Instamart ")))), /*#__PURE__*/_react.default.createElement("div", {
+    className: ""
+  }, /*#__PURE__*/_react.default.createElement("h3", {
     className: "m-4 p-4"
   }, isOnlineTick ? "✅" : "⛔")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "p-6 "
+  }, /*#__PURE__*/_react.default.createElement("span", {
+    className: ""
+  }, user.name), /*#__PURE__*/_react.default.createElement("h1", {
+    className: ""
+  }, user.email)), /*#__PURE__*/_react.default.createElement("div", {
     className: "m-1 p-5"
   }, login ? /*#__PURE__*/_react.default.createElement("button", {
     className: "p-2 bg-green-600 rounded-lg",
@@ -36027,7 +36054,7 @@ var Header = function Header() {
 };
 var _default = Header;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/dist/index.js","../hooks/useOnline":"src/hooks/useOnline.js","../assets/Logo":"src/assets/Logo.js"}],"src/Config.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/dist/index.js","../hooks/useOnline":"src/hooks/useOnline.js","../assets/Logo":"src/assets/Logo.js","../context/UserContext":"src/context/UserContext.js"}],"src/Config.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37504,9 +37531,12 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.ResturantCard = void 0;
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 var _Config = require("../Config");
+var _UserContext = _interopRequireDefault(require("../context/UserContext"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 var ResturantCard = function ResturantCard(_ref) {
   var name = _ref.name,
     lastMileTravelString = _ref.lastMileTravelString,
@@ -37514,6 +37544,9 @@ var ResturantCard = function ResturantCard(_ref) {
     cuisines = _ref.cuisines,
     area = _ref.area;
   var url = _Config.IMG_CDN_URL + cloudinaryImageId;
+  var _useContext = (0, _react.useContext)(_UserContext.default),
+    user = _useContext.user;
+  //   console.log(user.name)
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "w-52 h-auto shadow-lg bg-yellow-50 m-2 p-4 "
   }, /*#__PURE__*/_react.default.createElement("img", {
@@ -37522,11 +37555,11 @@ var ResturantCard = function ResturantCard(_ref) {
   }), /*#__PURE__*/_react.default.createElement("h3", {
     className: "font-bold "
   }, " ", name), /*#__PURE__*/_react.default.createElement("h4", null, " ", cuisines.join(", "), " "), /*#__PURE__*/_react.default.createElement("h5", null, " ", lastMileTravelString, " "), /*#__PURE__*/_react.default.createElement("p", {
-    className: "font-medium"
-  }, area));
+    className: "font-semibold"
+  }, area), /*#__PURE__*/_react.default.createElement("span", null, user.name, " ", user.email));
 };
 exports.ResturantCard = ResturantCard;
-},{"react":"node_modules/react/index.js","../Config":"src/Config.js"}],"src/components/ShimmerUI.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../Config":"src/Config.js","../context/UserContext":"src/context/UserContext.js"}],"src/components/ShimmerUI.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37593,6 +37626,7 @@ var _ShimmerUI = _interopRequireDefault(require("./ShimmerUI"));
 var _reactRouterDom = require("react-router-dom");
 var _helper = require("../utils/helper.js");
 var _useOnline = _interopRequireDefault(require("../hooks/useOnline.js"));
+var _UserContext = _interopRequireDefault(require("../context/UserContext"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -37619,6 +37653,9 @@ var Body = function Body() {
     _useState6 = _slicedToArray(_useState5, 2),
     filteredResturants = _useState6[0],
     setFilteredResturants = _useState6[1];
+  var _useContext = (0, _react.useContext)(_UserContext.default),
+    user = _useContext.user,
+    setUser = _useContext.setUser;
   (0, _react.useEffect)(function () {
     // API call
     getRestraunt();
@@ -37659,7 +37696,7 @@ var Body = function Body() {
   }
 
   // if Resturant.length == 0 => Shimmer UI
-  // else Show restaurant data  
+  // else Show restaurant data
   return allResturants.length == 0 ? /*#__PURE__*/_react.default.createElement(_ShimmerUI.default, null) : /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
     className: "Seach-container  py-4 mx-1 mb-0 pb-0 "
   }, /*#__PURE__*/_react.default.createElement("div", {
@@ -37675,12 +37712,12 @@ var Body = function Body() {
   }), /*#__PURE__*/_react.default.createElement("button", {
     className: "bg-red-500 hover:bg-gray-600 text-white w-16 rounded-lg  p-1 ",
     onClick: function onClick() {
-      // (1) need to filter data 
+      // (1) need to filter data
       var data = (0, _helper.filterdata)(searchText, allResturants);
       // (2) set data
       setFilteredResturants(data);
     }
-  }, " Search "))), /*#__PURE__*/_react.default.createElement("div", {
+  }, " ", "Search", " "))), /*#__PURE__*/_react.default.createElement("div", {
     className: "restrauntant-list  flex flex-wrap"
   }, filteredResturants.length > 0 ? filteredResturants.map(function (rest) {
     return /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
@@ -37691,7 +37728,7 @@ var Body = function Body() {
 };
 var _default = Body;
 exports.default = _default;
-},{"../Config":"src/Config.js","./ResturantCard":"src/components/ResturantCard.js","react":"node_modules/react/index.js","./ShimmerUI":"src/components/ShimmerUI.js","react-router-dom":"node_modules/react-router-dom/dist/index.js","../utils/helper.js":"src/utils/helper.js","../hooks/useOnline.js":"src/hooks/useOnline.js"}],"src/components/Footer.js":[function(require,module,exports) {
+},{"../Config":"src/Config.js","./ResturantCard":"src/components/ResturantCard.js","react":"node_modules/react/index.js","./ShimmerUI":"src/components/ShimmerUI.js","react-router-dom":"node_modules/react-router-dom/dist/index.js","../utils/helper.js":"src/utils/helper.js","../hooks/useOnline.js":"src/hooks/useOnline.js","../context/UserContext":"src/context/UserContext.js"}],"src/components/Footer.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38040,27 +38077,16 @@ var _Error = _interopRequireDefault(require("./components/Error"));
 var _ResturantMenu = _interopRequireDefault(require("./components/ResturantMenu"));
 var _Profile = _interopRequireDefault(require("./components/Profile"));
 var _ShimmerUI = _interopRequireDefault(require("./components/ShimmerUI"));
+var _UserContext = _interopRequireDefault(require("./context/UserContext"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-/**
- *  Header
- *    - Logo 
- *    - nav items ( Right side )
- *    - cart
- *  Body 
- *    - Search bar 
- *    - Resturant_card
- *       - Img
- *       - Name
- *       - Rating
- *       - Cusines
- *  Footer
- *     - link
- *     - CopyRight
- * 
- */
-
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i.return && (_r = _i.return(), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 // import About from "./components/About";
 var About = (0, _react.lazy)(function () {
   return require("_bundle_loader")(require.resolve("./components/About"));
@@ -38073,7 +38099,19 @@ var Instamart = (0, _react.lazy)(function () {
   return require("_bundle_loader")(require.resolve("./components/Instamart"));
 });
 var App = function App() {
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_Header.default, null), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Outlet, null), /*#__PURE__*/_react.default.createElement(_Footer.default, null));
+  var _useState = (0, _react.useState)({
+      name: "Mohdammad Samir",
+      email: "samie@gmail.com"
+    }),
+    _useState2 = _slicedToArray(_useState, 2),
+    user = _useState2[0],
+    setUser = _useState2[1];
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_UserContext.default.Provider, {
+    value: {
+      user: user,
+      setUser: setUser
+    }
+  }, /*#__PURE__*/_react.default.createElement(_Header.default, null), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Outlet, null), /*#__PURE__*/_react.default.createElement(_Footer.default, null)));
 };
 var approuter = (0, _reactRouterDom.createBrowserRouter)([{
   path: "/",
@@ -38108,7 +38146,7 @@ var root = _client.default.createRoot(document.getElementById("root"));
 root.render( /*#__PURE__*/_react.default.createElement(_reactRouterDom.RouterProvider, {
   router: approuter
 }));
-},{"react":"node_modules/react/index.js","react-dom/client":"node_modules/react-dom/client.js","./components/Header":"src/components/Header.js","./components/Body":"src/components/Body.js","./components/Footer":"src/components/Footer.js","react-router-dom":"node_modules/react-router-dom/dist/index.js","_bundle_loader":"node_modules/parcel-bundler/src/builtins/bundle-loader.js","./components/About":[["About.460069cf.js","src/components/About.js"],"About.460069cf.js.map","src/components/About.js"],"./components/Contact":"src/components/Contact.js","./components/Error":"src/components/Error.js","./components/ResturantMenu":"src/components/ResturantMenu.js","./components/Profile":"src/components/Profile.js","./components/Instamart":[["Instamart.badd5948.js","src/components/Instamart.js"],"Instamart.badd5948.js.map","src/components/Instamart.js"],"./components/ShimmerUI":"src/components/ShimmerUI.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-dom/client":"node_modules/react-dom/client.js","./components/Header":"src/components/Header.js","./components/Body":"src/components/Body.js","./components/Footer":"src/components/Footer.js","react-router-dom":"node_modules/react-router-dom/dist/index.js","_bundle_loader":"node_modules/parcel-bundler/src/builtins/bundle-loader.js","./components/About":[["About.460069cf.js","src/components/About.js"],"About.460069cf.js.map","src/components/About.js"],"./components/Contact":"src/components/Contact.js","./components/Error":"src/components/Error.js","./components/ResturantMenu":"src/components/ResturantMenu.js","./components/Profile":"src/components/Profile.js","./components/Instamart":[["Instamart.badd5948.js","src/components/Instamart.js"],"Instamart.badd5948.js.map","src/components/Instamart.js"],"./components/ShimmerUI":"src/components/ShimmerUI.js","./context/UserContext":"src/context/UserContext.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -38133,7 +38171,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61150" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53971" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

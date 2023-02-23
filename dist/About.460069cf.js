@@ -149,6 +149,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
+var _UserContext = _interopRequireDefault(require("../context/UserContext"));
 var _Profile = _interopRequireDefault(require("./Profile"));
 var _ProfileClass = _interopRequireDefault(require("./ProfileClass"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -183,6 +184,9 @@ var About = /*#__PURE__*/function (_React$Component) {
       // console.log("Parent - render");
       return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h1", null, "This is about us page!!"), /*#__PURE__*/_react.default.createElement(_ProfileClass.default, {
         name: "first child"
+      }), /*#__PURE__*/_react.default.createElement(_UserContext.default.Consumer, null, function (_ref) {
+        var user = _ref.user;
+        return /*#__PURE__*/_react.default.createElement("span", null, "Name: ", user.name, " Email: ", user.email);
       }));
     }
   }]);
@@ -190,7 +194,7 @@ var About = /*#__PURE__*/function (_React$Component) {
 }(_react.default.Component);
 var _default = About;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./Profile":"src/components/Profile.js","./ProfileClass":"src/components/ProfileClass.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../context/UserContext":"src/context/UserContext.js","./Profile":"src/components/Profile.js","./ProfileClass":"src/components/ProfileClass.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -215,7 +219,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61150" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53971" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
