@@ -11,7 +11,7 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
   const [allResturants, setAllResturants] = useState([]);
   const [filteredResturants, setFilteredResturants] = useState([]);
-  const { user , setUser} = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
 
   useEffect(() => {
     // API call
@@ -87,7 +87,6 @@ const Body = () => {
             });
           }}
         ></input> */}
-        
       </div>
 
       <div className="restrauntant-list  flex flex-wrap">

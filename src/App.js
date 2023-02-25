@@ -34,6 +34,10 @@ const Instamart = lazy(() => import("./components/Instamart"));
 import { lazy, Suspense } from "react";
 import ShimmerUI from "./components/ShimmerUI";
 import UserContext from "./context/UserContext";
+// making a bridge for React App to Redux 
+import { Provider } from "react-redux";
+import store from "./store/store";
+import Cart from "./components/Cart";
 
 const App = () => {
   const [user, setUser] = useState({
@@ -41,13 +45,13 @@ const App = () => {
     email: "samie@gmail.com",
   });
   return (
-    <>
+    <Provider store={store}>
       <UserContext.Provider value={{ user: user, setUser: setUser }}>
         <Header />
         <Outlet />
         <Footer />
       </UserContext.Provider>
-    </>
+    </Provider>
   );
 };
 const approuter = createBrowserRouter([
@@ -90,6 +94,10 @@ const approuter = createBrowserRouter([
           </Suspense>
         ),
       },
+      {
+        path: "/cart",
+        element: <Cart />
+      }
     ],
   },
 ]);

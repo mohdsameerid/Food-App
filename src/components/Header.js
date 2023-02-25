@@ -3,11 +3,14 @@ import { Link } from "react-router-dom";
 import useOnline from "../hooks/useOnline";
 import Title from "../assets/Logo";
 import UserContext from "../context/UserContext";
+import { useSelector } from "react-redux"; // bridge between react & redux.
 
 const Header = () => {
   const [login, setLogin] = useState(false);
   const isOnlineTick = useOnline(); // custom hook
   const { user } = useContext(UserContext);
+  const cardItems = useSelector((store) => store.card.items); //
+  console.log(cardItems);
 
   return (
     <div className="flex justify-between bg-yellow-200">
@@ -26,10 +29,15 @@ const Header = () => {
             {" "}
             <Link to="/contact"> Contact </Link>
           </li>
-          <li className="px-2">cart</li>
+
           <li className="px-2">
             {" "}
             <Link to="/instamart"> Instamart </Link>
+          </li>
+          <li className="px-2">
+            <Link to="/cart">
+              cart- {cardItems.length ? cardItems.length : " 0"} items
+            </Link>
           </li>
         </ul>
       </div>
