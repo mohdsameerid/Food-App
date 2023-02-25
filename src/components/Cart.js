@@ -31,7 +31,7 @@ const Cart = () => {
       {data.length !== 0 ? (
         data.map((items) => <FoodItems key={items.id} {...items} />)
       ) : (
-        <></>
+        <h1>Cart is empty</h1>
       )}
     </div>
   );

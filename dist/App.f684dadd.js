@@ -44994,17 +44994,17 @@ var FoodItems = function FoodItems(_ref) {
   var img = _Config.IMG_CDN_URL + cloudinaryImageId;
   // console.log(name);
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: "p-5 m-5 bg-green-100 h-auto"
+    className: "p-2  bg-green-100 h-auto"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "h-auto  p-5 flex justify-between"
   }, /*#__PURE__*/_react.default.createElement("div", {
-    className: ""
+    className: "w-1/2"
   }, /*#__PURE__*/_react.default.createElement("span", {
     className: "font-bold"
   }, name), /*#__PURE__*/_react.default.createElement("img", {
     src: img,
     className: "h-32 w-60"
-  }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("span", {
+  }), /*#__PURE__*/_react.default.createElement("span", {
     className: "w-1/3"
   }, " ", description), /*#__PURE__*/_react.default.createElement("br", null)), /*#__PURE__*/_react.default.createElement("div", {
     className: "m-6 p-10"
@@ -45049,7 +45049,7 @@ var Cart = function Cart() {
     return /*#__PURE__*/_react.default.createElement(_FoodItems.default, _extends({
       key: items.id
     }, items));
-  }) : /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null));
+  }) : /*#__PURE__*/_react.default.createElement("h1", null, "Cart is empty"));
 };
 var _default = Cart;
 /**
