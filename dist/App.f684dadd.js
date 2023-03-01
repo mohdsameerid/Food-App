@@ -45053,7 +45053,7 @@ var Cart = function Cart() {
     className: "h-4 font-bold m-3 p-3 rounded-r-xl"
   }, "Cart Length-", data.length)), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
     onClick: handleCart,
-    className: "bg-red-500 m-3 p-2 rounded-lg text-white"
+    className: "bg-red-400 m-3 p-2 rounded-lg text-white"
   }, "Clear Cart"))), data.length !== 0 ? data.map(function (items) {
     return /*#__PURE__*/_react.default.createElement(_FoodItems.default, _extends({
       key: items.id
