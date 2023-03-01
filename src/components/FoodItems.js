@@ -16,7 +16,7 @@ const FoodItems = ({ cloudinaryImageId, name, description, price }) => {
             <span className="w-1/3"> {description}</span>
             <br></br>
           </div>
-          <div className="m-6 p-10 mr-80 inline-flex">
+          <div className="m-6 p-5 mr-80 inline-flex">
             <span className="font-bold ">Price: {price / 100}</span>
           </div>
         </div>

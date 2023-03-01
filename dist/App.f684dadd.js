@@ -39973,7 +39973,10 @@ var Body = function Body() {
   }
   var isOnline = (0, _useOnline.default)();
   if (!isOnline) {
-    return /*#__PURE__*/_react.default.createElement("h1", null, " Check your internet connetion .");
+    //early return
+    return /*#__PURE__*/_react.default.createElement("h1", {
+      className: "m-4 p-3 text-center font-bold"
+    }, " ", "\uD83D\uDD34Something went wrong please check your internet!!!");
   }
 
   // if Resturant.length == 0 => Shimmer UI
@@ -39981,7 +39984,7 @@ var Body = function Body() {
   return allResturants.length == 0 ? /*#__PURE__*/_react.default.createElement(_ShimmerUI.default, null) : /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
     className: "Seach-container  py-4 mx-1 mb-0 pb-0 "
   }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "ml-32 py-4"
+    className: "ml-36 py-4"
   }, /*#__PURE__*/_react.default.createElement("input", {
     type: "text",
     placeholder: "Search Restaurant",
@@ -45016,7 +45019,7 @@ var FoodItems = function FoodItems(_ref) {
   }), /*#__PURE__*/_react.default.createElement("span", {
     className: "w-1/3"
   }, " ", description), /*#__PURE__*/_react.default.createElement("br", null)), /*#__PURE__*/_react.default.createElement("div", {
-    className: "m-6 p-10 mr-80 inline-flex"
+    className: "m-6 p-5 mr-80 inline-flex"
   }, /*#__PURE__*/_react.default.createElement("span", {
     className: "font-bold "
   }, "Price: ", price / 100)))));

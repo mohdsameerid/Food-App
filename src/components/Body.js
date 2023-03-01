@@ -31,7 +31,13 @@ const Body = () => {
 
   const isOnline = useOnline();
   if (!isOnline) {
-    return <h1> Check your internet connetion .</h1>;
+    //early return
+    return (
+      <h1 className="m-4 p-3 text-center font-bold">
+        {" "}
+        🔴Something went wrong please check your internet!!!
+      </h1>
+    );
   }
 
   // if Resturant.length == 0 => Shimmer UI
@@ -41,7 +47,7 @@ const Body = () => {
   ) : (
     <>
       <div className="Seach-container  py-4 mx-1 mb-0 pb-0 ">
-        <div className="ml-32 py-4">
+        <div className="ml-36 py-4">
           <input
             type="text"
             placeholder="Search Restaurant"
