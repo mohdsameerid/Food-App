@@ -39828,7 +39828,7 @@ var ResturantCard = function ResturantCard(_ref) {
     user = _useContext.user;
   //   console.log(user.name)
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: "w-56 h-auto shadow-lg  m-4 p-1 rounded-md"
+    className: "w-56 h-auto shadow-lg  m-4 p-3 rounded-md"
   }, /*#__PURE__*/_react.default.createElement("img", {
     src: url,
     alt: "Img",
@@ -45049,7 +45049,7 @@ var Cart = function Cart() {
   };
   //    console.log(data)
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: "m-5 p-5 bg-gray-50"
+    className: " p-5 bg-gray-50"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "flex justify-evenly"
   }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h2", {
