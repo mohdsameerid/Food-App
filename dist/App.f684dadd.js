@@ -38277,31 +38277,36 @@ var Header = function Header() {
   }); //
   console.log(cardItems);
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: "flex justify-between bg-yellow-200"
+    className: "flex justify-between bg-yellow-200 "
   }, /*#__PURE__*/_react.default.createElement(_Logo.default, null), /*#__PURE__*/_react.default.createElement("div", {
     className: ""
   }, /*#__PURE__*/_react.default.createElement("ul", {
     className: "flex py-8"
   }, /*#__PURE__*/_react.default.createElement("li", {
-    className: "px-2"
+    className: ""
   }, " ", /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/"
-  }, " Home ")), /*#__PURE__*/_react.default.createElement("li", {
-    className: "px-2"
+    to: "/",
+    className: "hover:bg-yellow-400 rounded-lg p-2"
+  }, " ", "Home", " ")), /*#__PURE__*/_react.default.createElement("li", {
+    className: ""
   }, " ", /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/about"
-  }, " About ")), /*#__PURE__*/_react.default.createElement("li", {
-    className: "px-2"
+    to: "/about",
+    className: "hover:bg-yellow-400 rounded-lg p-2 "
+  }, " ", "About", " ")), /*#__PURE__*/_react.default.createElement("li", {
+    className: ""
   }, " ", /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/contact"
-  }, " Contact ")), /*#__PURE__*/_react.default.createElement("li", {
-    className: "px-2"
+    to: "/contact",
+    className: "hover:bg-yellow-400 rounded-lg p-2 "
+  }, " ", "Contact", " ")), /*#__PURE__*/_react.default.createElement("li", {
+    className: ""
   }, " ", /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/instamart"
-  }, " Instamart ")), /*#__PURE__*/_react.default.createElement("li", {
-    className: "px-2"
+    to: "/instamart",
+    className: "hover:bg-yellow-400 rounded-lg p-2 "
+  }, " ", "Instamart", " ")), /*#__PURE__*/_react.default.createElement("li", {
+    className: ""
   }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/cart"
+    to: "/cart",
+    className: "hover:bg-yellow-400 rounded-lg  p-2"
   }, "cart- ", cardItems.length ? cardItems.length : " 0", " items")))), /*#__PURE__*/_react.default.createElement("div", {
     className: ""
   }, /*#__PURE__*/_react.default.createElement("h3", {
@@ -44993,10 +44998,12 @@ var FoodItems = function FoodItems(_ref) {
     price = _ref.price;
   var img = _Config.IMG_CDN_URL + cloudinaryImageId;
   // console.log(name);
-  return /*#__PURE__*/_react.default.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("hr", {
+    className: ""
+  }), /*#__PURE__*/_react.default.createElement("div", {
     className: "p-2  bg-green-100 h-auto"
   }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "h-auto  p-5 flex justify-between"
+    className: "h-auto  p-5 flex justify-evenly"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "w-1/2"
   }, /*#__PURE__*/_react.default.createElement("span", {
@@ -45010,7 +45017,7 @@ var FoodItems = function FoodItems(_ref) {
     className: "m-6 p-10"
   }, /*#__PURE__*/_react.default.createElement("span", {
     className: "font-bold"
-  }, "Price: ", price / 100))));
+  }, "Price: ", price / 100)))));
 };
 var _default = FoodItems;
 exports.default = _default;
@@ -45049,7 +45056,9 @@ var Cart = function Cart() {
     return /*#__PURE__*/_react.default.createElement(_FoodItems.default, _extends({
       key: items.id
     }, items));
-  }) : /*#__PURE__*/_react.default.createElement("h1", null, "Cart is empty"));
+  }) : /*#__PURE__*/_react.default.createElement("h1", {
+    className: "font-bold text-2xl text-center"
+  }, "Cart is empty"));
 };
 var _default = Cart;
 /**
@@ -45175,7 +45184,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50584" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50421" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

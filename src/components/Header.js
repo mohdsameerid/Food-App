@@ -13,29 +13,44 @@ const Header = () => {
   console.log(cardItems);
 
   return (
-    <div className="flex justify-between bg-yellow-200">
+    <div className="flex justify-between bg-yellow-200 ">
       <Title />
       <div className="">
         <ul className="flex py-8">
-          <li className="px-2">
+          <li className="">
             {" "}
-            <Link to="/"> Home </Link>
+            <Link to="/" className="hover:bg-yellow-400 rounded-lg p-2">
+              {" "}
+              Home{" "}
+            </Link>
           </li>
-          <li className="px-2">
+          <li className="">
             {" "}
-            <Link to="/about"> About </Link>
+            <Link to="/about" className="hover:bg-yellow-400 rounded-lg p-2 ">
+              {" "}
+              About{" "}
+            </Link>
           </li>
-          <li className="px-2">
+          <li className="">
             {" "}
-            <Link to="/contact"> Contact </Link>
+            <Link to="/contact" className="hover:bg-yellow-400 rounded-lg p-2 ">
+              {" "}
+              Contact{" "}
+            </Link>
           </li>
 
-          <li className="px-2">
+          <li className="">
             {" "}
-            <Link to="/instamart"> Instamart </Link>
+            <Link
+              to="/instamart"
+              className="hover:bg-yellow-400 rounded-lg p-2 "
+            >
+              {" "}
+              Instamart{" "}
+            </Link>
           </li>
-          <li className="px-2">
-            <Link to="/cart">
+          <li className="">
+            <Link to="/cart" className="hover:bg-yellow-400 rounded-lg  p-2">
               cart- {cardItems.length ? cardItems.length : " 0"} items
             </Link>
           </li>
