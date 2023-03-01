@@ -2,12 +2,12 @@ import React from "react";
 
 const ShimmerUI = () => {
     return (
-        <div className="restrauntant-list flex flex-wrap pt-12">
+        <div className="restrauntant-list flex flex-wrap pt-12 px-36">
             { 
               Array(15).fill("").map((e,index) => 
               
               <div className="shimmer-card  flex flex-wrap " key={index}>
-              <div className="p-4 md:w-1/3">
+              <div className="p-4 w-56 m-4">
                 <div className="w-48 h-64 border-2 border-gray-200 rounded-lg overflow-hidden">
                   <div className="lg:h-20 bg-gray-400 md:h-36 w-full object-cover object-center"></div>
                   <div className="p-6">

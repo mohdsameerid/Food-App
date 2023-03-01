@@ -10,11 +10,11 @@ export const ResturantCard = ({
   area,
 }) => {
   let url = IMG_CDN_URL + cloudinaryImageId;
-  const {user} = useContext(UserContext);
-//   console.log(user.name)
+  const { user } = useContext(UserContext);
+  //   console.log(user.name)
   return (
-    <div className="w-52 h-auto shadow-lg bg-yellow-50 m-2 p-4 ">
-      <img src={url} alt="Img" />
+    <div className="w-56 h-auto shadow-lg  m-4 p-1 rounded-md">
+      <img src={url} alt="Img" className="rounded-md"/>
       <h3 className="font-bold "> {name}</h3>
       <h4> {cuisines.join(", ")} </h4>
       <h5> {lastMileTravelString} </h5>

@@ -11,7 +11,7 @@ const Cart = () => {
   };
   //    console.log(data)
   return (
-    <div className="m-5 p-5 bg-green-100">
+    <div className="m-5 p-5 bg-gray-50">
       <div className="flex justify-evenly">
         <div>
           <h2 className="h-4 font-bold m-3 p-3 rounded-r-xl">
@@ -21,7 +21,7 @@ const Cart = () => {
         <div>
           <button
             onClick={handleCart}
-            className="bg-red-500 m-3 p-3 rounded-lg font-bold"
+            className="bg-red-500 m-3 p-2 rounded-lg text-white"
           >
             Clear Cart
           </button>

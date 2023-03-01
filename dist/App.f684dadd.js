@@ -38276,8 +38276,9 @@ var Header = function Header() {
     return store.card.items;
   }); //
   console.log(cardItems);
+  var background_IMg = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMidJ2qUzHxdG5MZS80KckG2KrXTBNXlnE8g&usqp=CAU";
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: "flex justify-between bg-yellow-200 "
+    className: "flex justify-between bg-pink-100 bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMidJ2qUzHxdG5MZS80KckG2KrXTBNXlnE8g&usqp=CAU')]"
   }, /*#__PURE__*/_react.default.createElement(_Logo.default, null), /*#__PURE__*/_react.default.createElement("div", {
     className: ""
   }, /*#__PURE__*/_react.default.createElement("ul", {
@@ -38286,27 +38287,27 @@ var Header = function Header() {
     className: ""
   }, " ", /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/",
-    className: "hover:bg-yellow-400 rounded-lg p-2"
+    className: "hover:bg-pink-400 rounded-lg p-2"
   }, " ", "Home", " ")), /*#__PURE__*/_react.default.createElement("li", {
     className: ""
   }, " ", /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/about",
-    className: "hover:bg-yellow-400 rounded-lg p-2 "
+    className: "hover:bg-pink-400 rounded-lg p-2 "
   }, " ", "About", " ")), /*#__PURE__*/_react.default.createElement("li", {
     className: ""
   }, " ", /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/contact",
-    className: "hover:bg-yellow-400 rounded-lg p-2 "
+    className: "hover:bg-pink-400 rounded-lg p-2 "
   }, " ", "Contact", " ")), /*#__PURE__*/_react.default.createElement("li", {
     className: ""
   }, " ", /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/instamart",
-    className: "hover:bg-yellow-400 rounded-lg p-2 "
+    className: "hover:bg-pink-400 rounded-lg p-2 "
   }, " ", "Instamart", " ")), /*#__PURE__*/_react.default.createElement("li", {
     className: ""
   }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/cart",
-    className: "hover:bg-yellow-400 rounded-lg  p-2"
+    className: "hover:bg-pink-400 rounded-lg  p-2"
   }, "cart- ", cardItems.length ? cardItems.length : " 0", " items")))), /*#__PURE__*/_react.default.createElement("div", {
     className: ""
   }, /*#__PURE__*/_react.default.createElement("h3", {
@@ -39827,10 +39828,11 @@ var ResturantCard = function ResturantCard(_ref) {
     user = _useContext.user;
   //   console.log(user.name)
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: "w-52 h-auto shadow-lg bg-yellow-50 m-2 p-4 "
+    className: "w-56 h-auto shadow-lg  m-4 p-1 rounded-md"
   }, /*#__PURE__*/_react.default.createElement("img", {
     src: url,
-    alt: "Img"
+    alt: "Img",
+    className: "rounded-md"
   }), /*#__PURE__*/_react.default.createElement("h3", {
     className: "font-bold "
   }, " ", name), /*#__PURE__*/_react.default.createElement("h4", null, " ", cuisines.join(", "), " "), /*#__PURE__*/_react.default.createElement("h5", null, " ", lastMileTravelString, " "), /*#__PURE__*/_react.default.createElement("p", {
@@ -39849,13 +39851,13 @@ var _react = _interopRequireDefault(require("react"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 var ShimmerUI = function ShimmerUI() {
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: "restrauntant-list flex flex-wrap pt-12"
+    className: "restrauntant-list flex flex-wrap pt-12 px-36"
   }, Array(15).fill("").map(function (e, index) {
     return /*#__PURE__*/_react.default.createElement("div", {
       className: "shimmer-card  flex flex-wrap ",
       key: index
     }, /*#__PURE__*/_react.default.createElement("div", {
-      className: "p-4 md:w-1/3"
+      className: "p-4 w-56 m-4"
     }, /*#__PURE__*/_react.default.createElement("div", {
       className: "w-48 h-64 border-2 border-gray-200 rounded-lg overflow-hidden"
     }, /*#__PURE__*/_react.default.createElement("div", {
@@ -39979,17 +39981,17 @@ var Body = function Body() {
   return allResturants.length == 0 ? /*#__PURE__*/_react.default.createElement(_ShimmerUI.default, null) : /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
     className: "Seach-container  py-4 mx-1 mb-0 pb-0 "
   }, /*#__PURE__*/_react.default.createElement("div", {
-    className: ""
+    className: "ml-32 py-4"
   }, /*#__PURE__*/_react.default.createElement("input", {
     type: "text",
     placeholder: "Search Restaurant",
     value: searchText,
-    className: "mx-5 border-2 mr-1 p-1 px-2 focus:bg-gray-100",
+    className: "mx-5 border-2 mr-0 p-1 px-2 focus:bg-gray-100 rounded-l-xl",
     onChange: function onChange(e) {
       setSearchText(e.target.value);
     }
   }), /*#__PURE__*/_react.default.createElement("button", {
-    className: "bg-red-500 hover:bg-gray-600 text-white w-16 rounded-lg  p-1 ",
+    className: "bg-pink-400  hover:bg-pink-800 text-white w-20 p-1  rounded-r-xl",
     onClick: function onClick() {
       // (1) need to filter data
       var data = (0, _helper.filterdata)(searchText, allResturants);
@@ -39997,7 +39999,7 @@ var Body = function Body() {
       setFilteredResturants(data);
     }
   }, " ", "Search", " "))), /*#__PURE__*/_react.default.createElement("div", {
-    className: "restrauntant-list  flex flex-wrap"
+    className: "restrauntant-list  flex flex-wrap  px-36"
   }, filteredResturants.length > 0 ? filteredResturants.map(function (rest) {
     return /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
       to: "/restaurant/" + rest.data.id,
@@ -40018,7 +40020,7 @@ var _react = _interopRequireDefault(require("react"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 var Footer = function Footer() {
   return /*#__PURE__*/_react.default.createElement("h1", {
-    className: "footer bg-yellow-200 text-center p-4 mt-8"
+    className: "footer bg-pink-200 text-center p-4 mt-8"
   }, " Footer ");
 };
 var _default = Footer;
@@ -44832,16 +44834,16 @@ var ResturantMenu = function ResturantMenu() {
     dispatch((0, _cardSlice.addItem)(item));
   };
   return !restaurant ? /*#__PURE__*/_react.default.createElement(_ShimmerUI.default, null) : /*#__PURE__*/_react.default.createElement("div", {
-    className: "menu w-full   flex"
+    className: "menu w-full   flex justify-center"
   }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "bg-yellow-50 p-10"
+    className: "bg-gray-50 p-10"
   }, /*#__PURE__*/_react.default.createElement("img", {
     src: _Config.IMG_CDN_URL + restaurant.cloudinaryImageId,
     width: "300px"
   }), /*#__PURE__*/_react.default.createElement("h1", {
     className: "font-bold my-2 text-2xl"
   }, restaurant.name), /*#__PURE__*/_react.default.createElement("h1", null, "Menu id : ", restaurant.id), /*#__PURE__*/_react.default.createElement("h2", null, restaurant.area, " , ", restaurant.city), /*#__PURE__*/_react.default.createElement("h4", null, restaurant.avgRating, " Star"), /*#__PURE__*/_react.default.createElement("p", null, restaurant.costForTwoMsg)), /*#__PURE__*/_react.default.createElement("div", {
-    className: "bg-yellow-50 p-10"
+    className: "bg-gray-50 p-10"
   }, /*#__PURE__*/_react.default.createElement("h1", {
     className: "font-bold text-xl"
   }, "Menu"), /*#__PURE__*/_react.default.createElement("button", {
@@ -45001,11 +45003,11 @@ var FoodItems = function FoodItems(_ref) {
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("hr", {
     className: ""
   }), /*#__PURE__*/_react.default.createElement("div", {
-    className: "p-2  bg-green-100 h-auto"
+    className: "p-2  bg-gray-50 h-auto"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "h-auto  p-5 flex justify-evenly"
   }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "w-1/2"
+    className: "w-1/3 ml-80"
   }, /*#__PURE__*/_react.default.createElement("span", {
     className: "font-bold"
   }, name), /*#__PURE__*/_react.default.createElement("img", {
@@ -45014,9 +45016,9 @@ var FoodItems = function FoodItems(_ref) {
   }), /*#__PURE__*/_react.default.createElement("span", {
     className: "w-1/3"
   }, " ", description), /*#__PURE__*/_react.default.createElement("br", null)), /*#__PURE__*/_react.default.createElement("div", {
-    className: "m-6 p-10"
+    className: "m-6 p-10 mr-80 inline-flex"
   }, /*#__PURE__*/_react.default.createElement("span", {
-    className: "font-bold"
+    className: "font-bold "
   }, "Price: ", price / 100)))));
 };
 var _default = FoodItems;
@@ -45044,14 +45046,14 @@ var Cart = function Cart() {
   };
   //    console.log(data)
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: "m-5 p-5 bg-green-100"
+    className: "m-5 p-5 bg-gray-50"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "flex justify-evenly"
   }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h2", {
     className: "h-4 font-bold m-3 p-3 rounded-r-xl"
   }, "Cart Length-", data.length)), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
     onClick: handleCart,
-    className: "bg-red-500 m-3 p-3 rounded-lg font-bold"
+    className: "bg-red-500 m-3 p-2 rounded-lg text-white"
   }, "Clear Cart"))), data.length !== 0 ? data.map(function (items) {
     return /*#__PURE__*/_react.default.createElement(_FoodItems.default, _extends({
       key: items.id

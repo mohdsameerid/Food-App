@@ -41,18 +41,18 @@ const Body = () => {
   ) : (
     <>
       <div className="Seach-container  py-4 mx-1 mb-0 pb-0 ">
-        <div className="">
+        <div className="ml-32 py-4">
           <input
             type="text"
             placeholder="Search Restaurant"
             value={searchText}
-            className="mx-5 border-2 mr-1 p-1 px-2 focus:bg-gray-100"
+            className="mx-5 border-2 mr-0 p-1 px-2 focus:bg-gray-100 rounded-l-xl"
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           />
           <button
-            className="bg-red-500 hover:bg-gray-600 text-white w-16 rounded-lg  p-1 "
+            className="bg-pink-400  hover:bg-pink-800 text-white w-20 p-1  rounded-r-xl"
             onClick={() => {
               // (1) need to filter data
               const data = filterdata(searchText, allResturants);
@@ -89,7 +89,7 @@ const Body = () => {
         ></input> */}
       </div>
 
-      <div className="restrauntant-list  flex flex-wrap">
+      <div className="restrauntant-list  flex flex-wrap  px-36">
         {filteredResturants.length > 0 ? (
           filteredResturants.map((rest) => {
             return (

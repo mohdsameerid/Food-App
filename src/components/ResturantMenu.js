@@ -25,8 +25,8 @@ const ResturantMenu = () => {
   return !restaurant ? (
     <ShimmerUI />
   ) : (
-    <div className="menu w-full   flex">
-      <div className="bg-yellow-50 p-10">
+    <div className="menu w-full   flex justify-center">
+      <div className="bg-gray-50 p-10">
         <img src={IMG_CDN_URL + restaurant.cloudinaryImageId} width="300px" />
         <h1 className="font-bold my-2 text-2xl">{restaurant.name}</h1>
         <h1>Menu id : {restaurant.id}</h1>
@@ -37,7 +37,7 @@ const ResturantMenu = () => {
         <p>{restaurant.costForTwoMsg}</p>
       </div>
 
-      <div className="bg-yellow-50 p-10">
+      <div className="bg-gray-50 p-10">
         <h1 className="font-bold text-xl">Menu</h1>
         <button onClick={handleAddItem} className="bg-gray-500 m-3 p-3">
           Add item
