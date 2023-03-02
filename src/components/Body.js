@@ -105,7 +105,7 @@ const Body = () => {
             );
           })
         ) : (
-          <h1>NO data Found!!!</h1>
+          <h1 className="m-4 p-3  font-bold">🔴Data not Found!!!</h1>
         )}
       </div>
       {/* <span className="mb-8"></span> */}

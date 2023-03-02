@@ -38308,7 +38308,7 @@ var Header = function Header() {
   }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/cart",
     className: "hover:bg-pink-400 rounded-lg  p-2"
-  }, "cart- ", cardItems.length ? cardItems.length : " 0", " items")))), /*#__PURE__*/_react.default.createElement("div", {
+  }, "Cart- ", cardItems.length ? cardItems.length : "", " items")))), /*#__PURE__*/_react.default.createElement("div", {
     className: ""
   }, /*#__PURE__*/_react.default.createElement("h3", {
     className: "m-4 p-4"
@@ -40008,7 +40008,9 @@ var Body = function Body() {
       to: "/restaurant/" + rest.data.id,
       key: rest.data.id
     }, /*#__PURE__*/_react.default.createElement(_ResturantCard.ResturantCard, rest.data));
-  }) : /*#__PURE__*/_react.default.createElement("h1", null, "NO data Found!!!")));
+  }) : /*#__PURE__*/_react.default.createElement("h1", {
+    className: "m-4 p-3  font-bold"
+  }, "\uD83D\uDD34Data not Found!!!")));
 };
 var _default = Body;
 exports.default = _default;
@@ -45189,7 +45191,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50421" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61431" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

@@ -12,10 +12,11 @@ const Header = () => {
   const cardItems = useSelector((store) => store.card.items); //
   console.log(cardItems);
 
-  const background_IMg = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMidJ2qUzHxdG5MZS80KckG2KrXTBNXlnE8g&usqp=CAU";
+  const background_IMg =
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMidJ2qUzHxdG5MZS80KckG2KrXTBNXlnE8g&usqp=CAU";
 
   return (
-    <div className="flex justify-between bg-pink-100 bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMidJ2qUzHxdG5MZS80KckG2KrXTBNXlnE8g&usqp=CAU')]" >
+    <div className="flex justify-between bg-pink-100 bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMidJ2qUzHxdG5MZS80KckG2KrXTBNXlnE8g&usqp=CAU')]">
       <Title />
       <div className="">
         <ul className="flex py-8">
@@ -43,17 +44,14 @@ const Header = () => {
 
           <li className="">
             {" "}
-            <Link
-              to="/instamart"
-              className="hover:bg-pink-400 rounded-lg p-2 "
-            >
+            <Link to="/instamart" className="hover:bg-pink-400 rounded-lg p-2 ">
               {" "}
               Instamart{" "}
             </Link>
           </li>
           <li className="">
             <Link to="/cart" className="hover:bg-pink-400 rounded-lg  p-2">
-              cart- {cardItems.length ? cardItems.length : " 0"} items
+              Cart- {cardItems.length ? cardItems.length : ""} items
             </Link>
           </li>
         </ul>
