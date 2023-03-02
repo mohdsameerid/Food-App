@@ -16,8 +16,10 @@ class About extends React.Component {
   render() {
     // console.log("Parent - render");
     return (
-      <>
+      <div className="m-4 p-3  font-bold">
+        <h1 className="font-extrabold text-4xl"> This Data come via Lazy Load!!!</h1>
         <h1>This is about us page!!</h1>
+        
         <ProfileClas name={"first child"} />
 
         {/* // using context central data in Class Base Component */}
@@ -31,7 +33,7 @@ class About extends React.Component {
 
         {/* <Profile name={"Second child"} />
                 <Profile name={"third child"} /> */}
-      </>
+      </div>
     );
   }
 }

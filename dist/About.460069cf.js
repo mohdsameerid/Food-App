@@ -182,7 +182,11 @@ var About = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       // console.log("Parent - render");
-      return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h1", null, "This is about us page!!"), /*#__PURE__*/_react.default.createElement(_ProfileClass.default, {
+      return /*#__PURE__*/_react.default.createElement("div", {
+        className: "m-4 p-3  font-bold"
+      }, /*#__PURE__*/_react.default.createElement("h1", {
+        className: "font-extrabold text-4xl"
+      }, " This Data come via Lazy Load!!!"), /*#__PURE__*/_react.default.createElement("h1", null, "This is about us page!!"), /*#__PURE__*/_react.default.createElement(_ProfileClass.default, {
         name: "first child"
       }), /*#__PURE__*/_react.default.createElement(_UserContext.default.Consumer, null, function (_ref) {
         var user = _ref.user;
