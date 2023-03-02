@@ -45140,7 +45140,9 @@ var approuter = (0, _reactRouterDom.createBrowserRouter)([{
   }, {
     path: "/about",
     element: /*#__PURE__*/_react.default.createElement(_react.Suspense, {
-      fallback: /*#__PURE__*/_react.default.createElement("h1", null, "About Data is loading....")
+      fallback: /*#__PURE__*/_react.default.createElement("h1", {
+        className: "m-3 p-3 font-bold text-2xl "
+      }, "About Data is loading....")
     }, /*#__PURE__*/_react.default.createElement(About, null)),
     children: [{
       path: "profile",

@@ -67,7 +67,7 @@ const approuter = createBrowserRouter([
       {
         path: "/about",
         element: (
-          <Suspense fallback={<h1>About Data is loading....</h1>}>
+          <Suspense fallback={<h1 className="m-3 p-3 font-bold text-2xl ">About Data is loading....</h1>}>
             <About />
           </Suspense>
         ),
