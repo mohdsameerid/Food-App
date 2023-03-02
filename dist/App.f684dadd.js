@@ -40121,21 +40121,7 @@ LazyPromise.prototype.catch = function (onError) {
   if (this.promise === null) this.promise = new Promise(this.executor);
   return this.promise.catch(onError);
 };
-},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/components/Contact.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _react = _interopRequireDefault(require("react"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-var Contact = function Contact() {
-  return /*#__PURE__*/_react.default.createElement("h1", null, " Contact Us Page!! ");
-};
-var _default = Contact;
-exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"src/components/Error.js":[function(require,module,exports) {
+},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/components/Error.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -45084,7 +45070,6 @@ var _Header = _interopRequireDefault(require("./components/Header"));
 var _Body = _interopRequireDefault(require("./components/Body"));
 var _Footer = _interopRequireDefault(require("./components/Footer"));
 var _reactRouterDom = require("react-router-dom");
-var _Contact = _interopRequireDefault(require("./components/Contact"));
 var _Error = _interopRequireDefault(require("./components/Error"));
 var _ResturantMenu = _interopRequireDefault(require("./components/ResturantMenu"));
 var _Profile = _interopRequireDefault(require("./components/Profile"));
@@ -45106,17 +45091,22 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 var About = (0, _react.lazy)(function () {
   return require("_bundle_loader")(require.resolve("./components/About"));
 }); // dynamic data
+// import Contact from "./components/Contact";
+var Contact = (0, _react.lazy)(function () {
+  return require("_bundle_loader")(require.resolve("./components/Contact"));
+}); // Lazy Load
 
 // import Instamart from "./components/Instamart";
 
 // lazy loading
 var Instamart = (0, _react.lazy)(function () {
   return require("_bundle_loader")(require.resolve("./components/Instamart"));
-});
+}); // Lazy Loading
+
 var App = function App() {
   var _useState = (0, _react.useState)({
-      name: "Mohdammad Samir",
-      email: "samie@gmail.com"
+      name: "Mohd Samir",
+      email: "samir@gmail.com"
     }),
     _useState2 = _slicedToArray(_useState, 2),
     user = _useState2[0],
@@ -45150,14 +45140,20 @@ var approuter = (0, _reactRouterDom.createBrowserRouter)([{
     }]
   }, {
     path: "/contact",
-    element: /*#__PURE__*/_react.default.createElement(_Contact.default, null)
+    element: /*#__PURE__*/_react.default.createElement(_react.Suspense, {
+      fallback: /*#__PURE__*/_react.default.createElement("h1", {
+        className: "m-3 p-3 font-bold text-2xl "
+      }, "Contact Data is Loading....")
+    }, /*#__PURE__*/_react.default.createElement(Contact, null))
   }, {
     path: "/restaurant/:id",
     element: /*#__PURE__*/_react.default.createElement(_ResturantMenu.default, null)
   }, {
     path: "/instamart",
     element: /*#__PURE__*/_react.default.createElement(_react.Suspense, {
-      fallback: /*#__PURE__*/_react.default.createElement(_ShimmerUI.default, null)
+      fallback: /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h1", {
+        className: "m-3 p-3 font-bold text-2xl "
+      }, "Instamart Data is Loading...."), /*#__PURE__*/_react.default.createElement(_ShimmerUI.default, null))
     }, /*#__PURE__*/_react.default.createElement(Instamart, null))
   }, {
     path: "/cart",
@@ -45168,7 +45164,7 @@ var root = _client.default.createRoot(document.getElementById("root"));
 root.render( /*#__PURE__*/_react.default.createElement(_reactRouterDom.RouterProvider, {
   router: approuter
 }));
-},{"react":"node_modules/react/index.js","react-dom/client":"node_modules/react-dom/client.js","./components/Header":"src/components/Header.js","./components/Body":"src/components/Body.js","./components/Footer":"src/components/Footer.js","react-router-dom":"node_modules/react-router-dom/dist/index.js","_bundle_loader":"node_modules/parcel-bundler/src/builtins/bundle-loader.js","./components/About":[["About.460069cf.js","src/components/About.js"],"About.460069cf.js.map","src/components/About.js"],"./components/Contact":"src/components/Contact.js","./components/Error":"src/components/Error.js","./components/ResturantMenu":"src/components/ResturantMenu.js","./components/Profile":"src/components/Profile.js","./components/Instamart":[["Instamart.badd5948.js","src/components/Instamart.js"],"Instamart.badd5948.js.map","src/components/Instamart.js"],"./components/ShimmerUI":"src/components/ShimmerUI.js","./context/UserContext":"src/context/UserContext.js","react-redux":"node_modules/react-redux/es/index.js","./store/store":"src/store/store.js","./components/Cart":"src/components/Cart.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-dom/client":"node_modules/react-dom/client.js","./components/Header":"src/components/Header.js","./components/Body":"src/components/Body.js","./components/Footer":"src/components/Footer.js","react-router-dom":"node_modules/react-router-dom/dist/index.js","_bundle_loader":"node_modules/parcel-bundler/src/builtins/bundle-loader.js","./components/About":[["About.460069cf.js","src/components/About.js"],"About.460069cf.js.map","src/components/About.js"],"./components/Contact":[["Contact.786f604f.js","src/components/Contact.js"],"Contact.786f604f.js.map","src/components/Contact.js"],"./components/Error":"src/components/Error.js","./components/ResturantMenu":"src/components/ResturantMenu.js","./components/Profile":"src/components/Profile.js","./components/Instamart":[["Instamart.badd5948.js","src/components/Instamart.js"],"Instamart.badd5948.js.map","src/components/Instamart.js"],"./components/ShimmerUI":"src/components/ShimmerUI.js","./context/UserContext":"src/context/UserContext.js","react-redux":"node_modules/react-redux/es/index.js","./store/store":"src/store/store.js","./components/Cart":"src/components/Cart.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;

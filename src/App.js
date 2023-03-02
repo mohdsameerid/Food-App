@@ -23,26 +23,27 @@ import Footer from "./components/Footer";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 // import About from "./components/About";
 const About = lazy(() => import("./components/About")); // dynamic data
-import Contact from "./components/Contact";
+// import Contact from "./components/Contact";
+const Contact = lazy(() => import("./components/Contact")); // Lazy Load
 import Error from "./components/Error";
 import ResturantMenu from "./components/ResturantMenu";
 import Profile from "./components/Profile";
 // import Instamart from "./components/Instamart";
 
 // lazy loading
-const Instamart = lazy(() => import("./components/Instamart"));
+const Instamart = lazy(() => import("./components/Instamart")); // Lazy Loading
 import { lazy, Suspense } from "react";
 import ShimmerUI from "./components/ShimmerUI";
 import UserContext from "./context/UserContext";
-// making a bridge for React App to Redux 
+// making a bridge for React App to Redux
 import { Provider } from "react-redux";
 import store from "./store/store";
 import Cart from "./components/Cart";
 
 const App = () => {
   const [user, setUser] = useState({
-    name: "Mohdammad Samir",
-    email: "samie@gmail.com",
+    name: "Mohd Samir",
+    email: "samir@gmail.com",
   });
   return (
     <Provider store={store}>
@@ -67,7 +68,13 @@ const approuter = createBrowserRouter([
       {
         path: "/about",
         element: (
-          <Suspense fallback={<h1 className="m-3 p-3 font-bold text-2xl ">About Data is loading....</h1>}>
+          <Suspense
+            fallback={
+              <h1 className="m-3 p-3 font-bold text-2xl ">
+                About Data is loading....
+              </h1>
+            }
+          >
             <About />
           </Suspense>
         ),
@@ -80,7 +87,17 @@ const approuter = createBrowserRouter([
       },
       {
         path: "/contact",
-        element: <Contact />,
+        element: (
+          <Suspense
+            fallback={
+              <h1 className="m-3 p-3 font-bold text-2xl ">
+                Contact Data is Loading....
+              </h1>
+            }
+          >
+            <Contact />
+          </Suspense>
+        ),
       },
       {
         path: "/restaurant/:id",
@@ -89,15 +106,24 @@ const approuter = createBrowserRouter([
       {
         path: "/instamart",
         element: (
-          <Suspense fallback={<ShimmerUI />}>
+          <Suspense
+            fallback={
+              <>
+                <h1 className="m-3 p-3 font-bold text-2xl ">
+                  Instamart Data is Loading....
+                </h1>
+                <ShimmerUI />
+              </>
+            }
+          >
             <Instamart />
           </Suspense>
         ),
       },
       {
         path: "/cart",
-        element: <Cart />
-      }
+        element: <Cart />,
+      },
     ],
   },
 ]);
