@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import FoodItems from "./FoodItems";
 import { clearCartAll } from "../store/cardSlice";
@@ -10,6 +10,12 @@ const Cart = () => {
     dispatch(clearCartAll());
   };
   //    console.log(data)
+  var price = 0;
+  data.map((items) => {
+    // console.log(items.price / 100);
+    price = price + items.price / 100;
+    // setTotalPrice(items.price / 100);  //Error:  Too many re-renders. React limits the number of renders to prevent an infinite loop.
+  });
   return (
     <div className=" p-5 bg-gray-50">
       <div className="flex justify-evenly">
@@ -32,6 +38,14 @@ const Cart = () => {
         data.map((items) => <FoodItems key={items.id} {...items} />)
       ) : (
         <h1 className="font-bold text-2xl text-center">Cart is empty</h1>
+      )}
+      <hr></hr>
+      {price != 0 ? (
+        <div className="m-6 p-5 mr-80 flex justify-end">
+          <span className="font-bold mr-2">Total Price: {price}</span>
+        </div>
+      ) : (
+        <span></span>
       )}
     </div>
   );

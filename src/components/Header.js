@@ -10,7 +10,7 @@ const Header = () => {
   const isOnlineTick = useOnline(); // custom hook
   const { user } = useContext(UserContext);
   const cardItems = useSelector((store) => store.card.items); //
-  console.log(cardItems);
+  // console.log(cardItems);
 
   const background_IMg =
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMidJ2qUzHxdG5MZS80KckG2KrXTBNXlnE8g&usqp=CAU";
@@ -67,14 +67,14 @@ const Header = () => {
       <div className="m-1 p-5">
         {login ? (
           <button
-            className="p-2 bg-green-600 rounded-lg"
+            className="p-2 bg-pink-400 rounded-lg"
             onClick={() => setLogin(false)}
           >
             Logout
           </button>
         ) : (
           <button
-            className="p-2 bg-green-400 rounded-lg"
+            className="p-2 bg-pink-400 rounded-lg"
             onClick={() => setLogin(true)}
           >
             Login

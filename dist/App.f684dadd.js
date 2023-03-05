@@ -38275,7 +38275,8 @@ var Header = function Header() {
   var cardItems = (0, _reactRedux.useSelector)(function (store) {
     return store.card.items;
   }); //
-  console.log(cardItems);
+  // console.log(cardItems);
+
   var background_IMg = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMidJ2qUzHxdG5MZS80KckG2KrXTBNXlnE8g&usqp=CAU";
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "flex justify-between bg-pink-100 bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMidJ2qUzHxdG5MZS80KckG2KrXTBNXlnE8g&usqp=CAU')]"
@@ -38321,12 +38322,12 @@ var Header = function Header() {
   }, user.email)), /*#__PURE__*/_react.default.createElement("div", {
     className: "m-1 p-5"
   }, login ? /*#__PURE__*/_react.default.createElement("button", {
-    className: "p-2 bg-green-600 rounded-lg",
+    className: "p-2 bg-pink-400 rounded-lg",
     onClick: function onClick() {
       return setLogin(false);
     }
   }, "Logout") : /*#__PURE__*/_react.default.createElement("button", {
-    className: "p-2 bg-green-400 rounded-lg",
+    className: "p-2 bg-pink-400 rounded-lg",
     onClick: function onClick() {
       return setLogin(true);
     }
@@ -45009,7 +45010,7 @@ var FoodItems = function FoodItems(_ref) {
   }, " ", description), /*#__PURE__*/_react.default.createElement("br", null)), /*#__PURE__*/_react.default.createElement("div", {
     className: "m-6 p-5 mr-80 inline-flex"
   }, /*#__PURE__*/_react.default.createElement("span", {
-    className: "font-bold "
+    className: " "
   }, "Price: ", price / 100)))));
 };
 var _default = FoodItems;
@@ -45021,11 +45022,13 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 var _reactRedux = require("react-redux");
 var _FoodItems = _interopRequireDefault(require("./FoodItems"));
 var _cardSlice = require("../store/cardSlice");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 var Cart = function Cart() {
   var data = (0, _reactRedux.useSelector)(function (store) {
@@ -45036,6 +45039,13 @@ var Cart = function Cart() {
     dispatch((0, _cardSlice.clearCartAll)());
   };
   //    console.log(data)
+  var price = 0;
+  data.map(function (items) {
+    // console.log(items.price / 100);
+    price = price + items.price / 100;
+    // setTotalPrice(items.price / 100);  //Error:  Too many re-renders. React limits the number of renders to prevent an infinite loop.
+  });
+
   return /*#__PURE__*/_react.default.createElement("div", {
     className: " p-5 bg-gray-50"
   }, /*#__PURE__*/_react.default.createElement("div", {
@@ -45051,7 +45061,11 @@ var Cart = function Cart() {
     }, items));
   }) : /*#__PURE__*/_react.default.createElement("h1", {
     className: "font-bold text-2xl text-center"
-  }, "Cart is empty"));
+  }, "Cart is empty"), /*#__PURE__*/_react.default.createElement("hr", null), price != 0 ? /*#__PURE__*/_react.default.createElement("div", {
+    className: "m-6 p-5 mr-80 flex justify-end"
+  }, /*#__PURE__*/_react.default.createElement("span", {
+    className: "font-bold mr-2"
+  }, "Total Price: ", price)) : /*#__PURE__*/_react.default.createElement("span", null));
 };
 var _default = Cart;
 /**
@@ -45189,7 +45203,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61431" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52849" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
