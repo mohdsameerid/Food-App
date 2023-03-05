@@ -1,6 +1,6 @@
 const config = {
-  // IMG_CDN_LINK:
-    // "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/",
+  IMG_CDN_URL:
+    "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/",
 
   Restuarant_List_API:
     "https://corsanywhere.herokuapp.com/https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING",
@@ -8,8 +8,8 @@ const config = {
   Restuarant_Menu_API:
     "https://corsanywhere.herokuapp.com/https://www.swiggy.com/dapi/menu/v4/full?lat=12.9351929&lng=77.62448069999999&menuId=",
 
-  IMG_CDN_URL:
-    "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/",
+  // IMG_CDN_URL:
+  //   "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/",
 
   Restaurant_Menu_List:
     "https://www.swiggy.com/dapi/menu/v4/full?lat=26.4403848&lng=80.3160714&menuId=",

@@ -1,23 +1,21 @@
-import { useEffect, useState } from "react"
-import { Restaurant_Menu_List } from "../Config";
+import { useEffect, useState } from "react";
+// import { Restaurant_Menu_List } from "../Config";
+// import config from "../Config";
 import config from "../Config";
 
 // make our own custom Hook 'useRestaurant'
 const useRestaurant = (id) => {
-    const[restaurant,setRestaurant] = useState(null);
+  const [restaurant, setRestaurant] = useState(null);
 
-    useEffect(()=>{
-        getRestaurantInfo();
-    },[]);
-    async function getRestaurantInfo(){
-        const data = await fetch(config.Restaurant_Menu_List + id);
-        const json = await data.json();
-        setRestaurant(json.data);
-    }
+  useEffect(() => {
+    getRestaurantInfo();
+  }, []);
+  async function getRestaurantInfo() {
+    const data = await fetch(config.Restuarant_Menu_API + id);
+    const json = await data.json();
+    setRestaurant(json.data);
+  }
 
-    return restaurant;
-}
+  return restaurant;
+};
 export default useRestaurant;
-
-
-    
