@@ -40134,7 +40134,13 @@ var _reactRouterDom = require("react-router-dom");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 var Error = function Error() {
   var data = (0, _reactRouterDom.useRouteError)();
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h2", null, data.data), /*#__PURE__*/_react.default.createElement("h2", null, "Data ", data.statusText));
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "text-center m-3 p-4"
+  }, /*#__PURE__*/_react.default.createElement("h2", {
+    className: "font-bold text-2xl"
+  }, data.data), /*#__PURE__*/_react.default.createElement("h2", {
+    className: "font-bold text-3xl"
+  }, "Data ", data.statusText));
 };
 var _default = Error;
 exports.default = _default;
