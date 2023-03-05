@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { IMG_CDN_URL } from "../Config";
+import config from "../Config";
 import ShimmerUI from "./ShimmerUI";
 import useRestaurant from "../hooks/useRestaurant";
 import { addItem } from "../store/cardSlice";
@@ -27,7 +27,7 @@ const ResturantMenu = () => {
   ) : (
     <div className="menu w-full   flex justify-center">
       <div className="bg-gray-50 p-10">
-        <img src={IMG_CDN_URL + restaurant.cloudinaryImageId} width="300px" />
+        <img src={config.IMG_CDN_URL + restaurant.cloudinaryImageId} width="300px" />
         <h1 className="font-bold my-2 text-2xl">{restaurant.name}</h1>
         <h1>Menu id : {restaurant.id}</h1>
         <h2>

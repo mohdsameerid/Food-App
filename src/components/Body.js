@@ -6,12 +6,14 @@ import { Link } from "react-router-dom";
 import { filterdata } from "../utils/helper.js";
 import useOnline from "../hooks/useOnline.js";
 import UserContext from "../context/UserContext";
+import config from "../Config";
 
 const Body = () => {
   const [searchText, setSearchText] = useState("");
   const [allResturants, setAllResturants] = useState([]);
   const [filteredResturants, setFilteredResturants] = useState([]);
   const { user, setUser } = useContext(UserContext);
+  console.log()
 
   useEffect(() => {
     // API call
@@ -19,9 +21,7 @@ const Body = () => {
   }, []);
 
   async function getRestraunt() {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.4403848&lng=80.3160714&page_type=DESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(config.Restuarant_List_API);
     const json = await data.json();
     // console.log(json);
 

@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
-import { IMG_CDN_URL } from "../Config";
+// import { IMG_CDN_URL } from "../Config";
+import config from "../Config";
 import UserContext from "../context/UserContext";
 
 export const ResturantCard = ({
@@ -9,9 +10,10 @@ export const ResturantCard = ({
   cuisines,
   area,
 }) => {
-  let url = IMG_CDN_URL + cloudinaryImageId;
+  let url = config.IMG_CDN_URL + cloudinaryImageId;
   const { user } = useContext(UserContext);
   //   console.log(user.name)
+  
   return (
     <div className="w-56 h-auto shadow-lg  m-4 p-3 rounded-md">
       <img src={url} alt="Img" className="rounded-md" />
