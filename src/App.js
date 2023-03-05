@@ -28,10 +28,10 @@ const Contact = lazy(() => import("./components/Contact")); // Lazy Load
 import Error from "./components/Error";
 import ResturantMenu from "./components/ResturantMenu";
 import Profile from "./components/Profile";
-// import Instamart from "./components/Instamart";
+import Instamart from "./components/Instamart";
 
 // lazy loading
-const Instamart = lazy(() => import("./components/Instamart")); // Lazy Loading
+// const Instamart = lazy(() => import("./components/Instamart")); // Lazy Loading
 import { lazy, Suspense } from "react";
 import ShimmerUI from "./components/ShimmerUI";
 import UserContext from "./context/UserContext";
@@ -106,18 +106,18 @@ const approuter = createBrowserRouter([
       {
         path: "/instamart",
         element: (
-          <Suspense
-            fallback={
-              <>
-                <h1 className="m-3 p-3 font-bold text-2xl ">
-                  Instamart Data is Loading....
-                </h1>
-                <ShimmerUI />
-              </>
-            }
-          >
+          // <Suspense
+          //   fallback={
+          //     <>
+          //       <h1 className="m-3 p-3 font-bold text-2xl ">
+          //         Instamart Data is Loading....
+          //       </h1>
+          //       <ShimmerUI />
+          //     </>
+          //   }
+          // >
             <Instamart />
-          </Suspense>
+          // </Suspense>
         ),
       },
       {
