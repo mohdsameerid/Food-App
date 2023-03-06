@@ -13,7 +13,7 @@ const Body = () => {
   const [allResturants, setAllResturants] = useState([]);
   const [filteredResturants, setFilteredResturants] = useState([]);
   const { user, setUser } = useContext(UserContext);
-  console.log()
+  console.log();
 
   useEffect(() => {
     // API call
