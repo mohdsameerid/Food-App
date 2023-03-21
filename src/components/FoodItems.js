@@ -1,8 +1,9 @@
 import React from "react";
 import config from "../Config";
 
-const FoodItems = ({ cloudinaryImageId, name, description, price }) => {
-  const img = config.IMG_CDN_URL + cloudinaryImageId;
+const FoodItems = ({ imageId, name, description, price }) => {
+  console.log(imageId);
+  const img = config.IMG_CDN_URL + imageId;
   // console.log(name);
   return (
     <>

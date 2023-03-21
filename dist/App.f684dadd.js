@@ -38346,7 +38346,11 @@ var config = {
   IMG_CDN_URL: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/",
   Restuarant_List_API: "https://corsanywhere.herokuapp.com/https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.4403848&lng=80.3160714&page_type=DESKTOP_WEB_LISTING",
   //  Restaurants   https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.4403848&lng=80.3160714&page_type=DESKTOP_WEB_LISTING
-  Restuarant_Menu_API: "https://corsanywhere.herokuapp.com/https://www.swiggy.com/dapi/menu/v4/full?lat=12.9351929&lng=77.62448069999999&menuId=",
+  //  https://corsanywhere.herokuapp.com/https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.322232&lng=78.085605&page_type=DESKTOP_WEB_LISTING                    
+  // Restuarant_Menu_API:
+  //   "https://corsanywhere.herokuapp.com/https://www.swiggy.com/dapi/menu/v4/full?lat=12.9351929&lng=77.62448069999999&menuId=",
+
+  Restuarant_Menu_API: "https://corsanywhere.herokuapp.com/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=30.322232&lng=78.085605&restaurantId=",
   // IMG_CDN_URL:
   //   "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/",
 
@@ -40177,7 +40181,7 @@ function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefine
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 // make our own custom Hook 'useRestaurant'
 var useRestaurant = function useRestaurant(id) {
-  var _useState = (0, _react.useState)(null),
+  var _useState = (0, _react.useState)({}),
     _useState2 = _slicedToArray(_useState, 2),
     restaurant = _useState2[0],
     setRestaurant = _useState2[1];
@@ -40189,19 +40193,30 @@ var useRestaurant = function useRestaurant(id) {
   }
   function _getRestaurantInfo() {
     _getRestaurantInfo = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-      var data, json;
+      var _json$data;
+      var Resdata, json;
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
             return fetch(_Config.default.Restuarant_Menu_API + id);
           case 2:
-            data = _context.sent;
+            Resdata = _context.sent;
             _context.next = 5;
-            return data.json();
+            return Resdata.json();
           case 5:
             json = _context.sent;
-            setRestaurant(json.data);
+            // console.log(json?.data?.cards[0].card.card.info);
+
+            // const { name } = json?.data?.cards[0].card.card.info;
+            // const { id } = json?.data?.cards[0].card.card.info;
+            // console.log(name);
+            // console.log(id);
+            // const Array =
+            // json.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card;
+            // console.log(Array);
+
+            setRestaurant(json === null || json === void 0 ? void 0 : (_json$data = json.data) === null || _json$data === void 0 ? void 0 : _json$data.cards);
           case 7:
           case "end":
             return _context.stop();
@@ -44828,10 +44843,19 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 var ResturantMenu = function ResturantMenu() {
-  var _restaurant$menu;
+  var _Restaurant$, _Restaurant$$card, _Restaurant$$card$car, _Restaurant$2, _Restaurant$2$grouped, _Restaurant$2$grouped2, _Restaurant$2$grouped3, _Restaurant$2$grouped4, _Restaurant$2$grouped5;
   var _useParams = (0, _reactRouterDom.useParams)(),
     id = _useParams.id;
-  var restaurant = (0, _useRestaurant.default)(id);
+  var Restaurant = (0, _useRestaurant.default)(id);
+
+  // details of Restaurant
+  var restaurantData = (_Restaurant$ = Restaurant[0]) === null || _Restaurant$ === void 0 ? void 0 : (_Restaurant$$card = _Restaurant$.card) === null || _Restaurant$$card === void 0 ? void 0 : (_Restaurant$$card$car = _Restaurant$$card.card) === null || _Restaurant$$card$car === void 0 ? void 0 : _Restaurant$$card$car.info;
+  // console.log(restaurantData);
+
+  // details of menu of restaurant
+  var restaurantMenu = (_Restaurant$2 = Restaurant[2]) === null || _Restaurant$2 === void 0 ? void 0 : (_Restaurant$2$grouped = _Restaurant$2.groupedCard) === null || _Restaurant$2$grouped === void 0 ? void 0 : (_Restaurant$2$grouped2 = _Restaurant$2$grouped.cardGroupMap) === null || _Restaurant$2$grouped2 === void 0 ? void 0 : (_Restaurant$2$grouped3 = _Restaurant$2$grouped2.REGULAR) === null || _Restaurant$2$grouped3 === void 0 ? void 0 : (_Restaurant$2$grouped4 = _Restaurant$2$grouped3.cards[1]) === null || _Restaurant$2$grouped4 === void 0 ? void 0 : (_Restaurant$2$grouped5 = _Restaurant$2$grouped4.card) === null || _Restaurant$2$grouped5 === void 0 ? void 0 : _Restaurant$2$grouped5.card.itemCards;
+  // console.log(restaurantMenu);
+
   var dispatch = (0, _reactRedux.useDispatch)();
   var handleAddItem = function handleAddItem() {
     dispatch((0, _cardSlice.addItem)("grapes"));
@@ -44843,16 +44867,16 @@ var ResturantMenu = function ResturantMenu() {
     // console.log(item)
     dispatch((0, _cardSlice.addItem)(item));
   };
-  return !restaurant ? /*#__PURE__*/_react.default.createElement(_ShimmerUI.default, null) : /*#__PURE__*/_react.default.createElement("div", {
+  return !restaurantData ? /*#__PURE__*/_react.default.createElement(_ShimmerUI.default, null) : /*#__PURE__*/_react.default.createElement("div", {
     className: "menu w-full   flex justify-center"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "bg-gray-50 p-10"
   }, /*#__PURE__*/_react.default.createElement("img", {
-    src: _Config.default.IMG_CDN_URL + restaurant.cloudinaryImageId,
+    src: _Config.default.IMG_CDN_URL + restaurantData.cloudinaryImageId,
     width: "300px"
   }), /*#__PURE__*/_react.default.createElement("h1", {
     className: "font-bold my-2 text-2xl"
-  }, restaurant.name), /*#__PURE__*/_react.default.createElement("h1", null, "Menu id : ", restaurant.id), /*#__PURE__*/_react.default.createElement("h2", null, restaurant.area, " , ", restaurant.city), /*#__PURE__*/_react.default.createElement("h4", null, restaurant.avgRating, " Star"), /*#__PURE__*/_react.default.createElement("p", null, restaurant.costForTwoMsg)), /*#__PURE__*/_react.default.createElement("div", {
+  }, restaurantData.name), /*#__PURE__*/_react.default.createElement("h1", null, "Menu id : ", restaurantData.id), /*#__PURE__*/_react.default.createElement("h2", null, restaurantData.areaName, " , ", restaurantData.city), /*#__PURE__*/_react.default.createElement("h4", null, restaurantData.avgRating, " Star"), /*#__PURE__*/_react.default.createElement("p", null, restaurantData.costForTwoMsg)), /*#__PURE__*/_react.default.createElement("div", {
     className: "bg-gray-50 p-10"
   }, /*#__PURE__*/_react.default.createElement("h1", {
     className: "font-bold text-xl"
@@ -44862,13 +44886,15 @@ var ResturantMenu = function ResturantMenu() {
   }, "Add item"), /*#__PURE__*/_react.default.createElement("button", {
     onClick: handleClearCart,
     className: "bg-red-500 m-3 p-3"
-  }, "clear Cart"), /*#__PURE__*/_react.default.createElement("ul", null, Object.values(restaurant === null || restaurant === void 0 ? void 0 : (_restaurant$menu = restaurant.menu) === null || _restaurant$menu === void 0 ? void 0 : _restaurant$menu.items).map(function (item) {
+  }, "clear Cart"), /*#__PURE__*/_react.default.createElement("ul", null, restaurantMenu.map(function (items) {
+    var _items$card, _items$card$info, _items$card2, _items$card2$info, _items$card3, _items$card3$info;
     return /*#__PURE__*/_react.default.createElement("li", {
-      key: item.id
-    }, item.name, ": ", item.price / 10 / 10 + ".00", " ", /*#__PURE__*/_react.default.createElement("button", {
+      key: items === null || items === void 0 ? void 0 : (_items$card = items.card) === null || _items$card === void 0 ? void 0 : (_items$card$info = _items$card.info) === null || _items$card$info === void 0 ? void 0 : _items$card$info.id
+    }, items === null || items === void 0 ? void 0 : (_items$card2 = items.card) === null || _items$card2 === void 0 ? void 0 : (_items$card2$info = _items$card2.info) === null || _items$card2$info === void 0 ? void 0 : _items$card2$info.name, ": ", (items === null || items === void 0 ? void 0 : (_items$card3 = items.card) === null || _items$card3 === void 0 ? void 0 : (_items$card3$info = _items$card3.info) === null || _items$card3$info === void 0 ? void 0 : _items$card3$info.price) / 100, " ", /*#__PURE__*/_react.default.createElement("button", {
       className: "float-right underline",
       onClick: function onClick() {
-        return handleAdd(item);
+        var _items$card4;
+        return handleAdd(items === null || items === void 0 ? void 0 : (_items$card4 = items.card) === null || _items$card4 === void 0 ? void 0 : _items$card4.info);
       }
     }, "Add"));
   }))));
@@ -45203,11 +45229,12 @@ var _react = _interopRequireDefault(require("react"));
 var _Config = _interopRequireDefault(require("../Config"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 var FoodItems = function FoodItems(_ref) {
-  var cloudinaryImageId = _ref.cloudinaryImageId,
+  var imageId = _ref.imageId,
     name = _ref.name,
     description = _ref.description,
     price = _ref.price;
-  var img = _Config.default.IMG_CDN_URL + cloudinaryImageId;
+  console.log(imageId);
+  var img = _Config.default.IMG_CDN_URL + imageId;
   // console.log(name);
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("hr", {
     className: ""
@@ -45423,7 +45450,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49838" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58147" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
